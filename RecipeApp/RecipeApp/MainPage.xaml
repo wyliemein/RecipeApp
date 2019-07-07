@@ -12,8 +12,8 @@
                IsPassword="true"/>
         <Button Text="Login" TextColor="Green"
                 BackgroundColor="Gray"
-                Command="{Binding LoginCommands}" />
+                Command="{Binding LoginCommands}" Clicked="Login_OnClicked" />
         <Button Text="Dont Have an Account? Sign Up Here!" TextColor="Green"
-                Command="{Binding SignUpCommands}" />
+                Command="{Binding SignUpCommands}" Clicked="SignUp_OnClicked"/>
     </StackLayout>
 </ContentPage>

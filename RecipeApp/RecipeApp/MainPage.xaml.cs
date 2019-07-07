@@ -17,5 +17,13 @@ namespace RecipeApp
         {
             InitializeComponent();
         }
+        private async void SignUp_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SignUpPage());
+        }
+        private async void Login_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HomePage());
+        }
     }
 }
