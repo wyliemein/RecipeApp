@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace RecipeApp
@@ -17,13 +16,9 @@ namespace RecipeApp
         {
             InitializeComponent();
         }
-        private async void SignUp_OnClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new SignUpPage());
-        }
         private async void Login_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new HomePage());
         }
-    }
+	}
 }
