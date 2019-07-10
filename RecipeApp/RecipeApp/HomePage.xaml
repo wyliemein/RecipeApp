@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RecipeApp.HomePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label BackgroundColor="Gray" Text="Home Page" />
+        <StackLayout Padding="20" Spacing = "40">
+            <Label Text="Home Page" HorizontalTextAlignment="Center" FontSize="Large"/>
+            <Button x:Name="goToSearch" Text="Find a Recipe"
+                    TextColor="Green" BackgroundColor="Silver"
+                    Clicked="goToSearch_OnClicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

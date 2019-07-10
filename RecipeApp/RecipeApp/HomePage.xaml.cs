@@ -11,9 +11,9 @@ namespace RecipeApp
         {
             InitializeComponent();
         }
-        private async void SignIn_OnClicked(object sender, EventArgs e)
+        private async void goToSearch_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MainPage());
+            await Navigation.PushAsync(new SearchPage());
         }
     }
 }

@@ -11,7 +11,7 @@
         <Entry Placeholder="Password" Text="{Binding Password}" 
                IsPassword="true"/>
         <Button Text="Login" TextColor="Green"
-                BackgroundColor="Gray"
+                BackgroundColor="Silver"
                 Clicked="Login_OnClicked" />
     </StackLayout>
 </ContentPage>

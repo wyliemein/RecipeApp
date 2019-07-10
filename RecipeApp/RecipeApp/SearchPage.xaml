@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RecipeApp.SearchPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="30">
+            <Label Text="Search Page" HorizontalTextAlignment="Center" FontSize="Large" />
+            <Picker Title="Diet Type"/>
+            <Entry Placeholder="Restricted Ingredients"/>
+            <Entry Placeholder="Desired Ingredients"/>   
+            <Button Text="Search" x:Name="recipeSearch"
+                    TextColor="Green" BackgroundColor="Silver"
+                    Clicked="recipeSearch_OnClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
