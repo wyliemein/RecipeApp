@@ -20,5 +20,5 @@ namespace RecipeApp
         {
             await Navigation.PushAsync(new HomePage());
         }
-	}
+    }
 }
