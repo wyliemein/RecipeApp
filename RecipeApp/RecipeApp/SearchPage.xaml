@@ -9,6 +9,13 @@
             <Button Text="Search" x:Name="recipeSearch"
                     TextColor="Green" BackgroundColor="Silver"
                     Clicked="recipeSearch_OnClicked" />
+            <ListView x:Name="lstPersons">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
