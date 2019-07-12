@@ -6,6 +6,12 @@
             <Button x:Name="goToSearch" Text="Find a Recipe"
                     TextColor="Green" BackgroundColor="Silver"
                     Clicked="goToSearch_OnClicked" />
+            <Entry x:Name="recipeUrl" Placeholder="Recipe URL" />
+            <Entry x:Name="recipeName" Placeholder="Name" />
+            <Entry x:Name="recipeIngredients" Placeholder="Ingredients" />
+            <Button x:Name="addRecipe" Text="Add Recipe"
+                    TextColor="Green" BackgroundColor="Silver"
+                    Clicked="addRecipe_OnClicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -14,24 +14,25 @@ namespace XamarinFirebase.Helper
     {
         FirebaseClient firebase = new FirebaseClient("https://recipe-37835.firebaseio.com/");
 
-        public async Task<List<Recipe>> GetAllPersons()
+        public async Task<List<Recipe>> GetAllRecipes()
         {
 
             return (await firebase
-              .Child("Persons")
+              .Child("Recipes")
               .OnceAsync<Recipe>()).Select(item => new Recipe
               {
                   Name = item.Object.Name,
-                  PersonId = item.Object.PersonId
+                  RecipeUrl = item.Object.RecipeUrl,
+                  RecipeIngredients =item.Object.RecipeIngredients
               }).ToList();
         }
 
-        public async Task AddPerson(int personId, string name)
+        public async Task AddRecipe(string RecipeUrl, string name, string RecipeIngredients)
         {
 
             await firebase
-              .Child("Persons")
-              .PostAsync(new Recipe() { PersonId = personId, Name = name });
+              .Child("Recipes")
+              .PostAsync(new Recipe() { RecipeUrl = RecipeUrl, Name = name, RecipeIngredients = RecipeIngredients });
         }
     }
 }

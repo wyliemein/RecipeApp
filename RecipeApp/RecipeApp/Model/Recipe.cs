@@ -2,7 +2,8 @@
 {
     public class Recipe
     {
-        public int PersonId { get; set; }
+        public string RecipeUrl { get; set; }
         public string Name { get; set; }
+        public string RecipeIngredients { get; set; }
     }
 }
