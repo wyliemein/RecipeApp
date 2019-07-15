@@ -26,18 +26,12 @@ namespace RecipeApp
         private async void recipeSearch_OnClicked(object sender, EventArgs e)
         {
 
-            string deIn = DeIngredients.Text;
-            string reIn = ReIngredients.Text;
-            Console.WriteLine(deIn);
-            Console.WriteLine(reIn);
-
             var person = await firebaseHelper.GetRecipe(DeIngredients.Text, ReIngredients.Text); 
             if (person != null)
             {
                 
               
                 IngredientList = person.RecipeIngredients;  
-   
                 ResName = person.Name;
 
             

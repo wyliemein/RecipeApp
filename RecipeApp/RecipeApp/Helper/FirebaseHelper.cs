@@ -50,7 +50,6 @@ namespace XamarinFirebase.Helper
                 return allRecipies.Where(a => a.RecipeIngredients.Contains(deIn.ToLower()) == true).FirstOrDefault();
             }
             
-     
             return allRecipies.Where(a => a.RecipeIngredients.Contains(deIn.ToLower()) == true &&
                                           a.RecipeIngredients.Contains(reIn.ToLower()) == false).FirstOrDefault();
             
