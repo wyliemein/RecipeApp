@@ -16,6 +16,7 @@ namespace RecipeApp
         }
 
         private int getRandomNumber(int size)
+            //Takes an int value = to size of an array and returns a random index within that range
         {
             Random generator = new Random();
             int num = generator.Next(size);
