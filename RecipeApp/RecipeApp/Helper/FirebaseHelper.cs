@@ -23,7 +23,27 @@ namespace XamarinFirebase.Helper
               {
                   Name = item.Object.Name,
                   URL = item.Object.URL,
-                  Ingredients =item.Object.Ingredients
+                  Ingredients = item.Object.Ingredients,
+                  Calcium = item.Object.Calcium,
+                  Calories = item.Object.Calories,
+                  Category = item.Object.Category,
+                  Cholesterol = item.Object.Cholesterol,
+                  DietaryFiber = item.Object.DietaryFiber,
+                  Folate = item.Object.Folate,
+                  Iron = item.Object.Iron,
+                  Magnesium = item.Object.Iron,
+                  Niacin = item.Object.Niacin,
+                  Potassium = item.Object.Potassium,
+                  Protein = item.Object.Protein,
+                  SaturatedFat = item.Object.SaturatedFat,
+                  Sodium = item.Object.Sodium,
+                  Sugars = item.Object.Sugars,
+                  Thiamin = item.Object.Thiamin,
+                  TotalCarbohydrates = item.Object.TotalCarbohydrates,
+                  TotalFat = item.Object.TotalFat,
+                  VitaminA = item.Object.VitaminA,
+                  VitaminB6 = item.Object.VitaminB6,
+                  VitaminC = iten.Object.VitaminC
               }).ToList();
         }
 
