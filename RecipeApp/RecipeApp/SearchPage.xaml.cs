@@ -34,10 +34,10 @@ namespace RecipeApp
             {
 
 
-                IngredientList = person.Ingredients;
-                IngredientsList = IngredientsList.replace(',', '\n');
-                ResName = person.Name;
-                Link = person.URL;
+                IngredientList = person[0].Ingredient;
+                IngredientList = IngredientList.Replace(',', '\n');
+                ResName = person[0].Name;
+                Link = person[0].URL;
 
 
                 await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
