@@ -19,6 +19,7 @@ namespace RecipeApp
         public static string IngredientList;
 
 
+
         public SearchPage()
         {
             InitializeComponent();
@@ -29,13 +30,13 @@ namespace RecipeApp
             string deIn = DeIngredients.Text;
             Console.WriteLine(deIn);
 
-            var person = await firebaseHelper.GetRecipe(deIn);
+            List<Recipe> person= await firebaseHelper.GetRecipe(deIn);
             if (person != null)
             {
 
 
-                IngredientList = person.Ingredients;
-                ResName = person.Name;
+                IngredientList = person[1].Ingredient;
+                ResName = person[1].Name;
 
 
                 await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");

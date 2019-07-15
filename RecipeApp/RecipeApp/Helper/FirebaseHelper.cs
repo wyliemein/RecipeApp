@@ -23,7 +23,7 @@ namespace XamarinFirebase.Helper
               {
                   Name = item.Object.Name,
                   URL = item.Object.URL,
-                  Ingredients = item.Object.Ingredients,
+                  Ingredient = item.Object.Ingredient,
                   Calcium = item.Object.Calcium,
                   Calories = item.Object.Calories,
                   Category = item.Object.Category,
@@ -31,7 +31,7 @@ namespace XamarinFirebase.Helper
                   DietaryFiber = item.Object.DietaryFiber,
                   Folate = item.Object.Folate,
                   Iron = item.Object.Iron,
-                  Magnesium = item.Object.Iron,
+                  Magnesium = item.Object.Magnesium,
                   Niacin = item.Object.Niacin,
                   Potassium = item.Object.Potassium,
                   Protein = item.Object.Protein,
@@ -52,21 +52,22 @@ namespace XamarinFirebase.Helper
 
             await firebase
               .Child("Recipes")
-              .PostAsync(new Recipe() { URL = RecipeUrl, Name = name, Ingredients = RecipeIngredients });
+              .PostAsync(new Recipe() { URL = RecipeUrl, Name = name, Ingredient = RecipeIngredients });
         }
 
-        public async Task<Recipe> GetRecipe(string deIn)
+        public async Task<List<Recipe>> GetRecipe(string deIn)
         {
             var allRecipies = await GetAllRecipes();
+            
             
             await firebase
               .Child("Recipes")
               .OnceAsync<Recipe>();
             //if(deIn != null)
             //{
-                return allRecipies.Where(a => a.Ingredients.Contains(deIn.ToLower()) == true).FirstOrDefault();
+                return allRecipies.Where(a => a.Ingredient.Contains(deIn.ToLower()) == true).ToList();
            //}
-
+           
         }
 
     }

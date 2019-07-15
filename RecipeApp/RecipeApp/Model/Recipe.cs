@@ -4,9 +4,9 @@
     {
         public string URL { get; set; }
         public string Name { get; set; }
-        public string Ingredients { get; set; }
+        public string Ingredient { get; set; }
         public string Calcium { get; set; }
-        public string Calories { get; set; }
+        public int Calories { get; set; }
         public string Category { get; set; }
         public string Cholesterol { get; set; }
         public string DietaryFiber { get; set; }
