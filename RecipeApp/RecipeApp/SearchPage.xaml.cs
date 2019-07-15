@@ -29,7 +29,7 @@ namespace RecipeApp
             string deIn = DeIngredients.Text;
             Console.WriteLine(deIn);
 
-            var person = await firebaseHelper.GetRecipe(deIn);
+            List<Recipe> person= await firebaseHelper.GetRecipe(deIn);
             if (person != null)
             {
 
