@@ -4,18 +4,22 @@
         <StackLayout Padding="20" Spacing="30">
             <Label Text="Search Page" HorizontalTextAlignment="Center" FontSize="Large" />
             <Picker Title="Diet Type"/>
-            <Entry Placeholder="Restricted Ingredients"/>
-            <Entry Placeholder="Desired Ingredients"/>   
+            <Entry x:Name="ReIngredients" Placeholder="Restricted Ingredients"/>
+           <!-- <Entry Placeholder="Desired Ingredients"/> -->  
+            <Entry x:Name="DeIngredients" 
+                   Placeholder="Desired Ingredients" />
             <Button Text="Search" x:Name="recipeSearch"
                     TextColor="Green" BackgroundColor="Silver"
                     Clicked="recipeSearch_OnClicked" />
-            <ListView x:Name="lstPersons">
+            
+          <!--  <ListView x:Name="lstPersons">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Name}"></TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

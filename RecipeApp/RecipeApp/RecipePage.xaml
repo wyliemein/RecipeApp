@@ -3,8 +3,11 @@
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="30">
             <Label Text="Recipe Page" HorizontalTextAlignment="Center" FontSize="Large"/>
-            <Label Text="Recipe URL: " />
-            <Label Text="Recipe Ingredients: " />
+            <Label x:Name="url"
+                Text="Recipe URL: "/>
+                  
+            <Label x:Name="ingredients"
+                Text="Recipe Ingredients: "/>
             <Button x:Name="nextRecipe"
                     Text="Next Recipe" BackgroundColor="Silver"
                     TextColor="Green" />

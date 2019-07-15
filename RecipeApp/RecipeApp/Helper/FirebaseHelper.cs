@@ -34,6 +34,29 @@ namespace XamarinFirebase.Helper
               .Child("Recipes")
               .PostAsync(new Recipe() { RecipeUrl = RecipeUrl, Name = name, RecipeIngredients = RecipeIngredients });
         }
+        
+        public async Task<Recipe> GetRecipe(string deIn, string reIn)
+        {
+            var allRecipies = await GetAllRecipes();
+            await firebase
+              .Child("Recipes")
+              .OnceAsync<Recipe>();
+            if(deIn == null)
+            {
+                return allRecipies.Where(a => a.RecipeIngredients.Contains(reIn.ToLower()) == false).FirstOrDefault();
+            }
+            if(reIn == null)
+            {
+                return allRecipies.Where(a => a.RecipeIngredients.Contains(deIn.ToLower()) == true).FirstOrDefault();
+            }
+            
+     
+            return allRecipies.Where(a => a.RecipeIngredients.Contains(deIn.ToLower()) == true &&
+                                          a.RecipeIngredients.Contains(reIn.ToLower()) == false).FirstOrDefault();
+            
+        
+        }
+        
     }
 }
 
