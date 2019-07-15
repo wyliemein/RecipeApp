@@ -8,6 +8,7 @@
         public string Calcium { get; set; }
         public string Calories { get; set; }
         public string Category { get; set; }
+        public string Cholesterol { get; set; }
         public string DietaryFiber { get; set; }
         public string Folate { get; set; }
         public string Iron { get; set; }

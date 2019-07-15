@@ -43,7 +43,7 @@ namespace XamarinFirebase.Helper
                   TotalFat = item.Object.TotalFat,
                   VitaminA = item.Object.VitaminA,
                   VitaminB6 = item.Object.VitaminB6,
-                  VitaminC = iten.Object.VitaminC
+                  VitaminC = item.Object.VitaminC
               }).ToList();
         }
 
