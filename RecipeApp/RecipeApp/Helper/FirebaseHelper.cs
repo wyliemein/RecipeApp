@@ -34,7 +34,7 @@ namespace XamarinFirebase.Helper
               .Child("Recipes")
               .PostAsync(new Recipe() { RecipeUrl = RecipeUrl, Name = name, RecipeIngredients = RecipeIngredients });
         }
-        
+
         public async Task<Recipe> GetRecipe(string deIn)
         {
             var allRecipies = await GetAllRecipes();
@@ -47,8 +47,6 @@ namespace XamarinFirebase.Helper
           //  }
 
         }
-        
+
     }
 }
-
-       

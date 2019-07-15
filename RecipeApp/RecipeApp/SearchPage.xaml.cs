@@ -29,16 +29,15 @@ namespace RecipeApp
             string deIn = DeIngredients.Text;
             Console.WriteLine(deIn);
 
-            var person = await firebaseHelper.GetRecipe(deIn); 
+            var person = await firebaseHelper.GetRecipe(deIn);
             if (person != null)
             {
-                
-              
-                IngredientList = person.RecipeIngredients;  
-   
+
+
+                IngredientList = person.RecipeIngredients;
                 ResName = person.Name;
 
-            
+
                 await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
                 clearFeild(DeIngredients);
                 await Navigation.PushAsync(new RecipePage());
