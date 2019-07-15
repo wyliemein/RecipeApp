@@ -35,6 +35,7 @@ namespace RecipeApp
 
 
                 IngredientList = person.Ingredients;
+                IngredientsList = IngredientsList.replace(',', '\n');
                 ResName = person.Name;
                 Link = person.URL;
 
