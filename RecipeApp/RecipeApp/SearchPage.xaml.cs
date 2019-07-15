@@ -27,27 +27,30 @@ namespace RecipeApp
         {
 
             string deIn = DeIngredients.Text;
-            string reIn = ReIngredients.Text;
             Console.WriteLine(deIn);
-            Console.WriteLine(reIn);
 
-            var person = await firebaseHelper.GetRecipe(DeIngredients.Text, ReIngredients.Text); 
+            var person = await firebaseHelper.GetRecipe(deIn);
             if (person != null)
             {
-                
-              
-                IngredientList = person.RecipeIngredients;  
-   
+
+
+                IngredientList = person.RecipeIngredients;
                 ResName = person.Name;
 
-            
+
                 await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
+                clearFeild(DeIngredients);
                 await Navigation.PushAsync(new RecipePage());
             }
             else
             {
                 await DisplayAlert("Success", "No Recipe Available", "OK");
+                clearFeild(DeIngredients);
             }
+        }
+        private void clearFeild(Entry entry)
+        {
+            entry.Text = string.Empty;
         }
     }
 }

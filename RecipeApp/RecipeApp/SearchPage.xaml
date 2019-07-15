@@ -4,7 +4,6 @@
         <StackLayout Padding="20" Spacing="30">
             <Label Text="Search Page" HorizontalTextAlignment="Center" FontSize="Large" />
             <Picker Title="Diet Type"/>
-            <Entry x:Name="ReIngredients" Placeholder="Restricted Ingredients"/>
            <!-- <Entry Placeholder="Desired Ingredients"/> -->  
             <Entry x:Name="DeIngredients" 
                    Placeholder="Desired Ingredients" />
