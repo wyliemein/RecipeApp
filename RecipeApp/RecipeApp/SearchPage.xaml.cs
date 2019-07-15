@@ -41,15 +41,12 @@ namespace RecipeApp
             
                 await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
                 clearFeild(DeIngredients);
-                //DeIngredients.Text = string.Empty;
                 await Navigation.PushAsync(new RecipePage());
             }
             else
             {
                 await DisplayAlert("Success", "No Recipe Available", "OK");
                 clearFeild(DeIngredients);
-                //DeIngredients.Text = string.Empty;
-
             }
         }
         private void clearFeild(Entry entry)
