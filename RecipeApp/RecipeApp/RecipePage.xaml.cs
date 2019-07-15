@@ -14,5 +14,12 @@ namespace RecipeApp
             ingredients.Text = "Recipe Ingredients: " + SearchPage.IngredientList;
 
         }
+
+        private int getRandomNumber(int size)
+        {
+            Random generator = new Random();
+            int num = generator.Next(size);
+            return num;
+        }
     }
 }

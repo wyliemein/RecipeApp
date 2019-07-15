@@ -31,24 +31,23 @@ namespace RecipeApp
             Console.WriteLine(deIn);
             Console.WriteLine(reIn);
 
-            var person = await firebaseHelper.GetRecipe(DeIngredients.Text, ReIngredients.Text);
+            var person = await firebaseHelper.GetRecipe(DeIngredients.Text, ReIngredients.Text); 
             if (person != null)
             {
                 
               
-                IngredientList = person.RecipeIngredients;
+                IngredientList = person.RecipeIngredients;  
    
                 ResName = person.Name;
 
             
-                await DisplayAlert("Success", "Person Retrive Successfully", "OK");
+                await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
                 await Navigation.PushAsync(new RecipePage());
             }
             else
             {
-                await DisplayAlert("Success", "No Person Available", "OK");
+                await DisplayAlert("Success", "No Recipe Available", "OK");
             }
-            //await Navigation.PushAsync(new RecipePage());
         }
     }
 }
