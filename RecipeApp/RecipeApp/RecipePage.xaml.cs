@@ -10,7 +10,8 @@ namespace RecipeApp
         public RecipePage()
         {
             InitializeComponent();
-            url.Text = "Recipe Url: " + SearchPage.ResName;
+            name.Text = "Recipe Name: " +SearchPage.ResName;
+            url.Text = "Recipe Url: " + SearchPage.Link;
             ingredients.Text = "Recipe Ingredients: " + SearchPage.IngredientList;
 
         }
