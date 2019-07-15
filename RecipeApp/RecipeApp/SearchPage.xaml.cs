@@ -17,8 +17,7 @@ namespace RecipeApp
         FirebaseHelper firebaseHelper = new FirebaseHelper();
         public static string ResName;
         public static string IngredientList;
-
-
+        public static string Link;
 
         public SearchPage()
         {
@@ -35,8 +34,10 @@ namespace RecipeApp
             {
 
 
-                IngredientList = person[1].Ingredient;
-                ResName = person[1].Name;
+                IngredientList = person.Ingredients;
+                IngredientsList = IngredientsList.replace(',', '\n');
+                ResName = person.Name;
+                Link = person.URL;
 
 
                 await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
