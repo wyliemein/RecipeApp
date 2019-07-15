@@ -19,13 +19,13 @@ namespace RecipeApp
             InitializeComponent();
         }
 
-        protected async override void OnAppearing()
-        {
+        //protected async override void OnAppearing()
+        //{
 
-            base.OnAppearing();
-            var allRecipes = await firebaseHelper.GetAllRecipes();
-           // lstPersons.ItemsSource = allPersons;
-        }
+        //   // base.OnAppearing();
+        //    //var allRecipes = await firebaseHelper.GetAllRecipes();
+        //   // lstPersons.ItemsSource = allPersons;
+        //}
 
         private async void goToSearch_OnClicked(object sender, EventArgs e)
         {

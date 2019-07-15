@@ -1,5 +1,6 @@
-"Recipes":{
-    {
+{
+  "Recipes":{
+    "0":{
       "Name":"D's Famous Salsa",
       "URL": "https://www.allrecipes.com/recipe/16259/ds-famous-salsa/",
       "Calories": 16,
@@ -24,7 +25,7 @@
       "Ingredient": "[' 2 (14.5 ounce) cans stewed tomatoes', ' 1/2 onion, finely diced', ' 1 teaspoon minced garlic', ' 1/2 lime, juiced', ' 1 teaspoon salt', ' 1/4 cup canned sliced green chiles, or to taste', ' 3 tablespoons chopped fresh cilantro']",
       "Categroy": "['vegan', 'gluten free', 'pescatarian']"
    },
-    {
+    "1":{
       "Name":"Pineapple Sticky Ribs",
       "URL": "https://www.allrecipes.com/recipe/255220/pineapple-sticky-ribs/",
       "Calories": 558,
@@ -49,7 +50,7 @@
       "Ingredient": "[' 3 pounds pork back ribs, separated and fat trimmed', ' 1 (12.5 ounce) can pineapple tidbits, drained', ' 1 cup apricot jam', ' 1/4 cup soy sauce', ' 2 tablespoons white wine vinegar', ' 2 tablespoons brown sugar', ' 2 cloves garlic, minced', ' 1 teaspoon ground ginger', ' 1/2 teaspoon salt', ' 1/2 teaspoon ground black pepper', ' 1/4 teaspoon cayenne pepper']",
       "Categroy": "['pescatarian']"
    },
-      {
+      "2":{
       "Name":"Key West Chicken",
       "URL": "https://www.allrecipes.com/recipe/25445/key-west-chicken/",
       "Calories": 184,
@@ -74,7 +75,7 @@
       "Ingredient": "[' 3 tablespoons soy sauce', ' 1 tablespoon honey', ' 1 tablespoon vegetable oil', ' 1 teaspoon lime juice', ' 1 teaspoon chopped garlic', ' 4 skinless, boneless chicken breast halves']",
       "Categroy": "['pescatarian']"
    },
-      {
+      "3":{
       "Name":"Roasted Brussels Sprouts",
       "URL": "https://www.allrecipes.com/recipe/67952/roasted-brussels-sprouts/",
       "Calories": 104,
@@ -99,7 +100,7 @@
       "Ingredient": "[' 1 1/2 pounds Brussels sprouts, ends trimmed and yellow leaves removed', ' 3 tablespoons olive oil', ' 1 teaspoon kosher salt', ' 1/2 teaspoon freshly ground black pepper']",
       "Categroy": "['vegan', 'gluten free', 'pescatarian']"
    },
-       {
+       "4":{
          "Name":"Spicy Vegan Potato Curry",
       "URL": "https://www.allrecipes.com/recipe/165190/spicy-vegan-potato-curry/",
       "Calories": 407,
@@ -124,7 +125,7 @@
       "Ingredient": "[' 4 potatoes, peeled and cubed', ' 2 tablespoons vegetable oil', ' 1 yellow onion, diced', ' 3 cloves garlic, minced', ' 2 teaspoons ground cumin', ' 1 1/2 teaspoons cayenne pepper', ' 4 teaspoons curry powder', ' 4 teaspoons garam masala', ' 1 (1 inch) piece fresh ginger root, peeled and minced', ' 2 teaspoons salt', ' 1 (14.5 ounce) can diced tomatoes', ' 1 (15 ounce) can garbanzo beans (chickpeas), rinsed and drained', ' 1 (15 ounce) can peas, drained', ' 1 (14 ounce) can coconut milk']",
       "Categroy": "['vegetarian', 'gluten free', 'pescatarian']"
    },
-       {
+      "5": {
           "Name":"Quinoa and Black Bean Chili",
       "URL": "https://www.allrecipes.com/recipe/217002/quinoa-and-black-bean-chili/",
       "Calories": 233,
@@ -149,7 +150,7 @@
       "Ingredient": "[' 1 cup uncooked quinoa, rinsed', ' 2 cups water', ' 1 tablespoon vegetable oil', ' 1 onion, chopped', ' 4 cloves garlic, chopped', ' 1 tablespoon chili powder', ' 1 tablespoon ground cumin', ' 1 (28 ounce) can crushed tomatoes', ' 2 (19 ounce) cans black beans, rinsed and drained', ' 1 green bell pepper, chopped', ' 1 red bell pepper, chopped', ' 1 zucchini, chopped', ' 1 jalapeno pepper, seeded and minced', ' 1 tablespoon minced chipotle peppers in adobo sauce', ' 1 teaspoon dried oregano', ' salt and ground black pepper to taste', ' 1 cup frozen corn', ' 1/4 cup chopped fresh cilantro']",
       "Categroy": "['vegan', 'gluten free', 'pescatarian']"
    },
-      {
+      "6":{
          "Name": "Simple Roasted Butternut Squash",
       "URL": "https://www.allrecipes.com/recipe/229733/simple-roasted-butternut-squash/",
       "Calories": 177,
@@ -174,7 +175,7 @@
       "Ingredient": "[' 1 butternut squash - peeled, seeded, and cut into 1-inch cubes', ' 2 tablespoons olive oil', ' 2 cloves garlic, minced', ' salt and ground black pepper to taste']",
       "Categroy": "['vegetarian', 'gluten free', 'pescatarian']"
    },
-      {
+      "7":{
       "Name":"Chicken Parmesan",
       "URL": "https://www.allrecipes.com/recipe/223042/chicken-parmesan/",
       "Calories": 471,
@@ -199,7 +200,7 @@
       "Ingredient": "[' 4 skinless, boneless chicken breast halves', ' salt and freshly ground black pepper to taste', ' 2 eggs', ' 1 cup panko bread crumbs, or more as needed', ' 1/2 cup grated Parmesan cheese', ' 2 tablespoons all-purpose flour, or more if needed', ' 1 cup olive oil for frying', ' 1/2 cup prepared tomato sauce', ' 1/4 cup fresh mozzarella, cut into small cubes', ' 1/4 cup chopped fresh basil', ' 1/2 cup grated provolone cheese', ' 1/4 cup grated Parmesan cheese', ' 1 tablespoon olive oil']",
       "Categroy": "['pescatarian']"
    },
-      {
+     "8": {
       "Name":"Maple Salmon",
       "URL": "https://www.allrecipes.com/recipe/51283/maple-salmon/",
       "Calories": 265,
@@ -224,7 +225,7 @@
       "Ingredient": "[' 1/4 cup maple syrup', ' 2 tablespoons soy sauce', ' 1 clove garlic, minced', ' 1/4 teaspoon garlic salt', ' 1/8 teaspoon ground black pepper', ' 1 pound salmon']",
       "Categroy": "[]"
    },
-      {
+     "9": {
       "Name":"Grilled Bacon-Wrapped Corn on the Cob",
       "URL": "https://www.allrecipes.com/recipe/202467/grilled-bacon-wrapped-corn-on-the-cob/",
       "Calories": 285,
@@ -249,7 +250,7 @@
       "Ingredient": "[' 10 ears corn, husked and cleaned', ' Cajun seasoning to taste', ' salt and black pepper to taste', ' 1 (1 pound) package sliced bacon', ' 10 12x8-inch sheets aluminum foil']",
       "Categroy": "['gluten free', 'pescatarian']"
    },
-      {
+      "10":{
       "Name":"Too Much Chocolate Cake",
       "URL": "https://www.allrecipes.com/recipe/7565/too-much-chocolate-cake/",
       "Calories": 600,
@@ -274,7 +275,7 @@
       "Ingredient": "[\" 1 (18.25 ounce) package devil's food cake mix\", ' 1 (5.9 ounce) package instant chocolate pudding mix', ' 1 cup sour cream', ' 1 cup vegetable oil', ' 4 eggs', ' 1/2 cup warm water', ' 2 cups semisweet chocolate chips']",
       "Categroy": "['vegetarian', 'gluten free', 'pescatarian']"
    },
-      {
+     "11": {
       "Name":"Zippy Summer Shrimp",
       "URL": "https://www.allrecipes.com/recipe/199263/zippy-summer-shrimp/",
       "Calories": 238,
@@ -299,7 +300,7 @@
       "Ingredient": "[' 1/3 cup extra-virgin olive oil', ' 3 cloves garlic, sliced', ' 1 teaspoon red pepper flakes', ' 2 teaspoons paprika', ' 2 pounds shell-on deveined jumbo shrimp', ' 1/4 cup lemon juice', ' 2 tablespoons chopped fresh basil', ' 1/2 teaspoon salt', ' 1/4 teaspoon black pepper']",
       "Categroy": "['gluten free']"
    },
-      {
+      "12":{
       "Name":"Sesame Seared Tuna",
       "URL": "https://www.allrecipes.com/recipe/71698/sesame-seared-tuna/",
       "Calories": 422,
@@ -324,7 +325,7 @@
       "Ingredient": "[' 1/4 cup soy sauce', ' 1 tablespoon mirin (Japanese sweet wine)', ' 1 tablespoon honey', ' 2 tablespoons sesame oil', ' 1 tablespoon rice wine vinegar', ' 4 (6 ounce) tuna steaks', ' 1/2 cup sesame seeds', ' wasabi paste', ' 1 tablespoon olive oil']",
       "Categroy": "[]"
    },
-      {
+      "13":{
       "Name":"Peppered Shrimp Alfredo",
       "URL": "https://www.allrecipes.com/recipe/133128/peppered-shrimp-alfredo/",
       "Calories": 707,
@@ -349,7 +350,7 @@
       "Ingredient": "[' 12 ounces penne pasta', ' 1/4 cup butter', ' 2 tablespoons extra-virgin olive oil', ' 1 onion, diced', ' 2 cloves garlic, minced', ' 1 red bell pepper, diced', ' 1/2 pound portobello mushrooms, diced', ' 1 pound medium shrimp, peeled and deveined', ' 1 (15 ounce) jar Alfredo sauce', ' 1/2 cup grated Romano cheese', ' 1/2 cup cream', ' 1 teaspoon cayenne pepper, or more to taste', ' Salt and pepper to taste', ' 1/4 cup chopped parsley']",
       "Categroy": "['gluten free']"
    },
-       {
+      "14": {
       "Name":"Gluten-Free Pizza Crust or Flatbread",
       "URL": "https://www.allrecipes.com/recipe/257436/gluten-free-pizza-crust-or-flatbread/",
       "Calories": 1632,
@@ -374,7 +375,7 @@
       "Ingredient": "[' 1 cup very warm water', ' 1/2 teaspoon white sugar', ' 2 teaspoons yeast', ' 2 cups gluten-free flour blend', ' 1/2 cup rice flour', ' 1 tablespoon Italian seasoning', ' 1 teaspoon xanthan gum', ' 1 teaspoon unflavored gelatin powder', ' 1/2 teaspoon salt', ' 3 tablespoons apple cider vinegar', ' 3 tablespoons olive oil']",
       "Categroy": "['vegetarian', 'gluten free', 'pescatarian']"
    },
-      {
+      "15":{
       "Name":"Garlic Green Beans",
       "URL": "https://www.allrecipes.com/recipe/18288/garlic-green-beans/",
       "Calories": 157,
@@ -399,7 +400,7 @@
       "Ingredient": "[' 1 tablespoon butter', ' 3 tablespoons olive oil', ' 1 medium head garlic - peeled and sliced', ' 2 (14.5 ounce) cans green beans, drained', ' salt and pepper to taste', ' 1/4 cup grated Parmesan cheese']",
       "Categroy": "['vegetarian', 'gluten free', 'pescatarian']"
    },
-       {
+      "16" :{
       "Name":"Quinoa and Black Beans",
       "URL": "https://www.allrecipes.com/recipe/49552/quinoa-and-black-beans/",
       "Calories": 153,
@@ -424,7 +425,7 @@
       "Ingredient": "[' 1 teaspoon vegetable oil', ' 1 onion, chopped', ' 3 cloves garlic, chopped', ' 3/4 cup quinoa', ' 1 1/2 cups vegetable broth', ' 1 teaspoon ground cumin', ' 1/4 teaspoon cayenne pepper', ' salt and ground black pepper to taste', ' 1 cup frozen corn kernels', ' 2 (15 ounce) cans black beans, rinsed and drained', ' 1/2 cup chopped fresh cilantro']",
       "Categroy": "['vegan', 'gluten free', 'pescatarian']"
    },
-       {
+      "17": {
       "Name":"Authentic German Potato Salad",
       "URL": "https://www.allrecipes.com/recipe/83097/authentic-german-potato-salad/",
       "Calories": 183,
@@ -449,7 +450,7 @@
       "Ingredient": "[' 3 cups diced peeled potatoes', ' 4 slices bacon', ' 1 small onion, diced', ' 1/4 cup white vinegar', ' 2 tablespoons water', ' 3 tablespoons white sugar', ' 1 teaspoon salt', ' 1/8 teaspoon ground black pepper', ' 1 tablespoon chopped fresh parsley']",
       "Categroy": "['gluten free', 'pescatarian']"
    },
-      {
+      "18":{
       "Name":"Chicken and Red Wine Sauce",
       "URL": "https://www.allrecipes.com/recipe/19125/chicken-and-red-wine-sauce/",
       "Calories": 214,
@@ -474,7 +475,7 @@
       "Ingredient": "[' 1 tablespoon olive oil', ' 1 tablespoon minced garlic', ' 3 pounds skinless, boneless chicken breast halves', ' 1 tablespoon paprika', ' 1 cup brown sugar', ' 1 cup red wine', ' salt and pepper to taste']",
       "Categroy": "['gluten free', 'pescatarian']"
    },
-       {
+      "19": {
       "Name":"Italian Peas",
       "URL": "https://www.allrecipes.com/recipe/90209/italian-peas/",
       "Calories": 106,
@@ -499,4 +500,5 @@
       "Ingredient": "[' 2 tablespoons olive oil', ' 1 onion, chopped', ' 2 cloves garlic, minced', ' 16 ounces frozen green peas', ' 1 tablespoon chicken stock', ' salt and ground black pepper to taste']",
       "Categroy": "['gluten free', 'pescatarian']"
    }
+}
 }
