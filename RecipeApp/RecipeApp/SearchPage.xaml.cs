@@ -35,7 +35,11 @@ namespace RecipeApp
 
 
                 IngredientList = person.Ingredients;
-                IngredientsList = IngredientsList.replace(',', '\n');
+                char[] toTrim = {'[', '\'', ']'};
+                IngredientList = IngredientList.TrimStart(toTrim); //trims " [' " from start
+                IngredientList = IngredientsList.TrimEnd(toTrim); //trims " ] " from end
+                IngredientsList = IngredientsList.replace("', '", "\n");
+
                 ResName = person.Name;
                 Link = person.URL;
 
