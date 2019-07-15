@@ -34,7 +34,7 @@ namespace RecipeApp
             {
 
 
-                IngredientList = person.RecipeIngredients;
+                IngredientList = person.Ingredients;
                 ResName = person.Name;
 
 

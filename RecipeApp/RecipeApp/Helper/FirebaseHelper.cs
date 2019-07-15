@@ -22,8 +22,8 @@ namespace XamarinFirebase.Helper
               .OnceAsync<Recipe>()).Select(item => new Recipe
               {
                   Name = item.Object.Name,
-                  RecipeUrl = item.Object.RecipeUrl,
-                  RecipeIngredients =item.Object.RecipeIngredients
+                  URL = item.Object.URL,
+                  Ingredients =item.Object.Ingredients
               }).ToList();
         }
 
@@ -32,19 +32,20 @@ namespace XamarinFirebase.Helper
 
             await firebase
               .Child("Recipes")
-              .PostAsync(new Recipe() { RecipeUrl = RecipeUrl, Name = name, RecipeIngredients = RecipeIngredients });
+              .PostAsync(new Recipe() { URL = RecipeUrl, Name = name, Ingredients = RecipeIngredients });
         }
 
         public async Task<Recipe> GetRecipe(string deIn)
         {
             var allRecipies = await GetAllRecipes();
+            
             await firebase
               .Child("Recipes")
               .OnceAsync<Recipe>();
-           // if(deIn != null)
-           // {
-                return allRecipies.Where(a => a.RecipeIngredients.Contains(deIn.ToLower()) == true).FirstOrDefault();
-          //  }
+            //if(deIn != null)
+            //{
+                return allRecipies.Where(a => a.Ingredients.Contains(deIn.ToLower()) == true).FirstOrDefault();
+           //}
 
         }
 

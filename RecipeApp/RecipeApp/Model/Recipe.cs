@@ -2,9 +2,9 @@
 {
     public class Recipe
     {
-        public string RecipeUrl { get; set; }
+        public string URL { get; set; }
         public string Name { get; set; }
-        public string RecipeIngredients { get; set; }
+        public string Ingredients { get; set; }
     }
    
 }
