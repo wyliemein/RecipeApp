@@ -13,7 +13,8 @@
                 Text="Recipe Ingredients: "/>
             <Button x:Name="nextRecipe"
                     Text="Next Recipe" BackgroundColor="Silver"
-                    TextColor="Green" />
+                    TextColor="Green"
+                    Clicked="nextRecipe_OnClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
