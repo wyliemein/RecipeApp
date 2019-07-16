@@ -15,7 +15,7 @@
               </Picker.ItemsSource>
             </Picker>
             <Label Text="{Binding Source={x:Reference dietType}, Path=SelectedItem}" 
-                   x:Name="dietLabel"/>
+                   x:Name="dietLabel" IsVisible="false"/>
            <!-- <Entry Placeholder="Desired Ingredients"/> -->  
             <Entry x:Name="DeIngredients" 
                    Placeholder="Desired Ingredients" />
