@@ -18,6 +18,7 @@ namespace RecipeApp
         public static string ResName;
         public static string IngredientList;
         public static string Link;
+        
 
         public SearchPage()
         {
@@ -30,6 +31,7 @@ namespace RecipeApp
             Console.WriteLine(deIn);
 
             List<Recipe> person= await firebaseHelper.GetRecipe(deIn);
+           
             if (person.Count != 0)
             {
                 Random rnd = new Random();
