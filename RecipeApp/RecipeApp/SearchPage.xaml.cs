@@ -31,15 +31,9 @@ namespace RecipeApp
 
             string deIn = DeIngredients.Text;
             string diet = dietLabel.Text;
-            string search = diet;
+            string search = deIn;
             string type = "Ingredient";
             List<Recipe> person = await firebaseHelper.GetRecipe(search, type);
-            //if (diet != null)
-            //{
-            //    var search = diet;
-            //    var type = "Category";
-            //    List<Recipe> person = await firebaseHelper.GetRecipe(search, type);
-            //}
 
             if (person.Count != 0)
             {

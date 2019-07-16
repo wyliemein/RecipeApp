@@ -67,7 +67,11 @@ namespace XamarinFirebase.Helper
             {
                 return allRecipies.Where(a => a.Ingredient.Contains(search.ToLower()) == true).ToList();
             }
-            return allRecipies.Where(a => a.Category.Contains(search.ToLower()) == true).ToList();
+            if (type == "Category")//if there are restricted ingredients filter for them.
+            {
+                return allRecipies.Where(a => a.Category.Contains(search.ToLower()) == true).ToList();
+            }
+            return null;
         }
     }
 }
