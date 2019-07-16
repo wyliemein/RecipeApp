@@ -55,7 +55,7 @@ namespace XamarinFirebase.Helper
               .PostAsync(new Recipe() { URL = RecipeUrl, Name = name, Ingredient = RecipeIngredients });
         }
 
-        public async Task<List<Recipe>> GetRecipe(string deIn)
+        public async Task<List<Recipe>> GetRecipe(string search, string type)
         {
             var allRecipies = await GetAllRecipes();
             
@@ -63,12 +63,11 @@ namespace XamarinFirebase.Helper
             await firebase
               .Child("Recipes")
               .OnceAsync<Recipe>();
-            //if(deIn != null)
-            //{
-                return allRecipies.Where(a => a.Ingredient.Contains(deIn.ToLower()) == true).ToList();
-           //}
-           
+            if (type == "Ingredient")//if there are restricted ingredients filter for them.
+            {
+                return allRecipies.Where(a => a.Ingredient.Contains(search.ToLower()) == true).ToList();
+            }
+            return allRecipies.Where(a => a.Category.Contains(search.ToLower()) == true).ToList();
         }
-
     }
 }

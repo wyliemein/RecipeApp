@@ -18,9 +18,9 @@ namespace RecipeApp
         public static string ResName;
         public static string IngredientList;
         public static string Link;
- 
+
         public static List<Recipe> temp;
-        
+
 
         public SearchPage()
         {
@@ -30,17 +30,23 @@ namespace RecipeApp
         {
 
             string deIn = DeIngredients.Text;
-            
+            string diet = dietLabel.Text;
+            string search = diet;
+            string type = "Ingredient";
+            List<Recipe> person = await firebaseHelper.GetRecipe(search, type);
+            //if (diet != null)
+            //{
+            //    var search = diet;
+            //    var type = "Category";
+            //    List<Recipe> person = await firebaseHelper.GetRecipe(search, type);
+            //}
 
-            List<Recipe> person= await firebaseHelper.GetRecipe(deIn);
-           
-           
             if (person.Count != 0)
             {
                 Random rnd = new Random();
                 int i = rnd.Next(0, person.Count);
                 IngredientList = person[i].Ingredient;
-                
+
                 char[] toTrim = {'[', '\'', ']'};
                 IngredientList = IngredientList.TrimStart(toTrim); //trims " [' " from start
                 IngredientList = IngredientList.TrimEnd(toTrim); //trims " ] " from end
