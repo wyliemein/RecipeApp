@@ -18,6 +18,7 @@ namespace RecipeApp
         public static string ResName;
         public static string IngredientList;
         public static string Link;
+        
 
         public SearchPage()
         {
