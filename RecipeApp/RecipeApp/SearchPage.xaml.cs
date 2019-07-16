@@ -32,17 +32,19 @@ namespace RecipeApp
             List<Recipe> person= await firebaseHelper.GetRecipe(deIn);
             if (person != null)
             {
-
-
-                IngredientList = person.Ingredients;
+                Random rnd = new Random();
+                int i = rnd.Next(0, person.Count);
+                IngredientList = person[i].Ingredient;
+                
                 char[] toTrim = {'[', '\'', ']'};
                 IngredientList = IngredientList.TrimStart(toTrim); //trims " [' " from start
-                IngredientList = IngredientsList.TrimEnd(toTrim); //trims " ] " from end
-                IngredientsList = IngredientsList.replace("', '", "\n");
+                IngredientList = IngredientList.TrimEnd(toTrim); //trims " ] " from end
+                IngredientList = IngredientList.Replace(", ", "\n");
 
-                ResName = person.Name;
-                Link = person.URL;
-
+                ResName = person[i].Name;
+                Link = person[i].URL;
+                if (person.Count!=1) {
+                    person.RemoveAt(i); }
 
                 await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
                 clearFeild(DeIngredients);
