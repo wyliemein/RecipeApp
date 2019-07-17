@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeApp.iOS", "RecipeApp.iOS.csproj", "{9483DCC9-321E-45CE-99F4-1E2C17C03A2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9483DCC9-321E-45CE-99F4-1E2C17C03A2D}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{9483DCC9-321E-45CE-99F4-1E2C17C03A2D}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{9483DCC9-321E-45CE-99F4-1E2C17C03A2D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{9483DCC9-321E-45CE-99F4-1E2C17C03A2D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{9483DCC9-321E-45CE-99F4-1E2C17C03A2D}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{9483DCC9-321E-45CE-99F4-1E2C17C03A2D}.Debug|iPhone.Build.0 = Debug|iPhone
+		{9483DCC9-321E-45CE-99F4-1E2C17C03A2D}.Release|iPhone.ActiveCfg = Release|iPhone
+		{9483DCC9-321E-45CE-99F4-1E2C17C03A2D}.Release|iPhone.Build.0 = Release|iPhone
+	EndGlobalSection
+EndGlobal
