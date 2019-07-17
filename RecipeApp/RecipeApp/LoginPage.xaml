@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RecipeApp.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="30" Padding="30"
+                 VerticalOptions="Center">
+        <!-- Place new controls here -->
+         <Label Text="Recipe App"
+               HorizontalOptions="Center"
+               FontAttributes="Bold" 
+               TextColor="Green"/>
+        <Entry Placeholder="Email" x:Name="email" Text="{Binding Email}" />
+        <Entry Placeholder="Password" x:Name="password" Text="{Binding Password}" 
+               IsPassword="true"/>
+        <Button Text="Login" TextColor="Green"
+                BackgroundColor="Silver"
+                Clicked="Login_OnClicked" />
+        <Button Text="Sign Up" TextColor="Green"
+                BackgroundColor="Silver"
+                Clicked="SignUp_OnClicked" />
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

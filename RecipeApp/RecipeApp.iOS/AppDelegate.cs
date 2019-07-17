@@ -22,6 +22,7 @@ namespace RecipeApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Firebase.Core.App.Configure();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

@@ -19,6 +19,8 @@ namespace RecipeApp.Droid
 
             base.OnCreate(savedInstanceState);
 
+            Firebase.FirebaseApp.InitializeApp(Application.Context);
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

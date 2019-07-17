@@ -17,9 +17,5 @@ namespace RecipeApp
             InitializeComponent();
             NavigationPage.SetBackButtonTitle(this, "Sign Out");
         }
-        private async void Login_OnClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new HomePage());
-        }
 	}
 }
