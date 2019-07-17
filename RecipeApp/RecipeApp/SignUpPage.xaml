@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RecipeApp.SignUpPage">
+    <ContentPage.Content>
+         <StackLayout Spacing="10" Padding="10"
+                 VerticalOptions="Center">
+        <!-- Place new controls here -->
+         <Label Text="Sign Up Here"
+               HorizontalOptions="Center"
+               FontAttributes="Bold" 
+               TextColor="Green"/>
+        <Entry Placeholder="Enter Email" x:Name="newEmail" Text="{Binding Email}" />
+        <Entry Placeholder="Enter Password" x:Name="newPassword" Text="{Binding Password}" 
+               IsPassword="true"/>
+        <Entry Placeholder="Re-Enter Password" x:Name="newPasswordCheck" Text="{Binding Password}" 
+               IsPassword="true"/>
+        <Button Text="Sign Up" TextColor="Green"
+                BackgroundColor="Silver"
+                Clicked="SignUp_OnClicked" />
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

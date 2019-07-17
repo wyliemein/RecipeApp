@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RecipeApp.LoginPage">
     <ContentPage.Content>
-        <StackLayout Spacing="30" Padding="30"
+        <StackLayout Spacing="10" Padding="10"
                  VerticalOptions="Center">
         <!-- Place new controls here -->
          <Label Text="Recipe App"
@@ -15,8 +15,7 @@
                 BackgroundColor="Silver"
                 Clicked="Login_OnClicked" />
         <Button Text="Sign Up" TextColor="Green"
-                BackgroundColor="Silver"
-                Clicked="SignUp_OnClicked" />
+                Clicked="SignUpPage_OnClicked" />
     </StackLayout>
     </ContentPage.Content>
 </ContentPage>

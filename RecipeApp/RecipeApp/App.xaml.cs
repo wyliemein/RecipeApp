@@ -10,7 +10,7 @@ namespace RecipeApp
         {
             InitializeComponent();
 
-			MainPage = new NavigationPage(new MainPage());
+			MainPage = new NavigationPage(new LoginPage());
         }
 
 		protected override void OnStart()

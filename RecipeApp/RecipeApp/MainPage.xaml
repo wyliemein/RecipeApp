@@ -10,8 +10,8 @@
         <Entry Placeholder="Username" Text="{Binding Username}" />
         <Entry Placeholder="Password" Text="{Binding Password}" 
                IsPassword="true"/>
-        <Button Text="Login" TextColor="Green"
+        <!--<Button Text="Login" TextColor="Green"
                 BackgroundColor="Silver"
-                Clicked="Login_OnClicked" />
+                Clicked="Login_OnClicked" />-->
     </StackLayout>
 </ContentPage>

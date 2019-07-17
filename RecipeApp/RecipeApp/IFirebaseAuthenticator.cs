@@ -5,6 +5,7 @@ namespace RecipeApp
 {
     public interface IFirebaseAuthenticator
     {
-        Task LoginWithEmailPassword(string text1, string text2);
+        Task<string> LoginWithEmailPassword(string email, string password);
+        Task<string> SignupWithEmailPassword(string email, string password);
     }
 }
