@@ -28,7 +28,7 @@
     <MtouchLink>Full</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <CodesignEntitlements>GoogleService-Info %283%29.plist</CodesignEntitlements>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -117,6 +117,8 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\infoIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\infoIcon.imageset\icons8-ios-50.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -144,6 +146,9 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info %283%29.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\infoIcon.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
