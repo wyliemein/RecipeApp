@@ -12,21 +12,9 @@ namespace RecipeApp.Droid
     {
         public async Task<string> LoginWithEmailPassword(string email, string password)
         {
-
-            var user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);
-            if (user.User.IsEmailVerified)
-            {
+                var user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);
                 var token = await user.User.GetIdTokenAsync(false);
-                if (token != null)
-                {
-                    return token.Token;
-                }
-                return null;
-            }
-            else
-            {
-                return null;
-            }
+                return token.Token;
         }
 
         public async Task<string> SignupWithEmailPassword(string email, string password)
@@ -34,6 +22,15 @@ namespace RecipeApp.Droid
             var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
             var token = await user.User.GetIdTokenAsync(false);
             return token.Token;
+        }
+        public bool CurrentUser(bool initial)
+        {
+            var current = FirebaseAuth.Instance.CurrentUser;
+            if (current != null)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

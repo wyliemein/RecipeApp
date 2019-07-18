@@ -7,5 +7,7 @@ namespace RecipeApp
     {
         Task<string> LoginWithEmailPassword(string email, string password);
         Task<string> SignupWithEmailPassword(string email, string password);
+        bool CurrentUser(bool initial);
+
     }
 }

@@ -1,20 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RecipeApp.RecipePage">
     <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="30">
-            <Label Text="Recipe Page" HorizontalTextAlignment="Center" FontSize="Large"/>
-            <Label x:Name="name"
-                Text ="Recipe Name: "/>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="30">
+                <Label Text="Recipe Page" HorizontalTextAlignment="Center" FontSize="Large"/>
+                <Label x:Name="name"
+                    Text ="Recipe Name: "/>
 
-            <Label x:Name="url"
-                Text="Recipe URL: "/>
-                  
-            <Label x:Name="ingredients"
-                Text="Recipe Ingredients: "/>
-            <Button x:Name="nextRecipe"
-                    Text="Next Recipe" BackgroundColor="Silver"
-                    TextColor="Green"
-                    Clicked="nextRecipe_OnClicked"/>
-        </StackLayout>
+                <Label x:Name="url"
+                    Text="Recipe URL: "/>
+                      
+                <Label x:Name="ingredients"
+                    Text="Recipe Ingredients: "/>
+                <Button x:Name="nextRecipe"
+                        Text="Next Recipe" BackgroundColor="Silver"
+                        TextColor="Green"
+                        Clicked="nextRecipe_OnClicked"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

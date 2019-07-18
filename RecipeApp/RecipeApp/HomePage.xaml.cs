@@ -17,6 +17,7 @@ namespace RecipeApp
         public HomePage()
         {
             InitializeComponent();
+            Navigation.PushAsync(new LoginPage());
         }
 
         //protected async override void OnAppearing()
@@ -40,6 +41,10 @@ namespace RecipeApp
             await DisplayAlert("Success", "Recipe Added Successfully", "OK");
             var allRecipes = await firebaseHelper.GetAllRecipes();
             // lstPersons.ItemsSource = allPersons;
+        }
+        private async void signOut_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LoginPage());
         }
     }
 }
