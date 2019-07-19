@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using RecipeApp.iOS;
 using Xamarin.Forms;
 using Firebase.Auth;
-using Firebase.Core;
 
 [assembly: Dependency(typeof(OFirebaseAuthClass))]
 
