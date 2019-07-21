@@ -18,8 +18,8 @@ namespace RecipeApp
         public static string ResName;
         public static string IngredientList;
         public static string Link;
-
-        public static List<Recipe> temp;
+        public static int index;
+        public static List<Recipes> temp;
 
 
         public SearchPage()
@@ -33,26 +33,27 @@ namespace RecipeApp
             string diet = dietLabel.Text;
             string search = deIn;
             string type = "Ingredient";
-            List<Recipe> person = await firebaseHelper.GetRecipe(search, type);
+            List<Recipes> person = await firebaseHelper.GetRecipe(search, type);
 
             if (person.Count != 0)
             {
                 Random rnd = new Random();
-                int i = rnd.Next(0, person.Count);
-                IngredientList = person[i].Ingredient;
+                index = rnd.Next(0, person.Count);
+                IngredientList = person[index].Ingredient;
 
                 char[] toTrim = {'[', '\'', ']'};
                 IngredientList = IngredientList.TrimStart(toTrim); //trims " [' " from start
                 IngredientList = IngredientList.TrimEnd(toTrim); //trims " ] " from end
                 IngredientList = IngredientList.Replace(", ", "\n");
 
-                ResName = person[i].Name;
-                Link = person[i].URL;
-                if (person.Count!=1) {
-                    person.RemoveAt(i); }
+                ResName = person[index].Name;
+                Link = person[index].URL;
+                //if (person.Count != 1)
+                //{
+                //    person.RemoveAt(index);
+                //}
 
                 temp = person;
-
                 await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
                 clearFeild(DeIngredients);
                 await Navigation.PushAsync(new RecipePage());

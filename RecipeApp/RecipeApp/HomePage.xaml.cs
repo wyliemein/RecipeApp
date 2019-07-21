@@ -32,16 +32,6 @@ namespace RecipeApp
         {
             await Navigation.PushAsync(new SearchPage());
         }
-        private async void addRecipe_OnClicked(object sender, EventArgs e)
-        {
-            var Url = recipeUrl.Text;
-            var Ingredients = recipeIngredients.Text;
-            var RecipeName = recipeName.Text;
-            await firebaseHelper.AddRecipe(Url, RecipeName, Ingredients);
-            await DisplayAlert("Success", "Recipe Added Successfully", "OK");
-            var allRecipes = await firebaseHelper.GetAllRecipes();
-            // lstPersons.ItemsSource = allPersons;
-        }
         private async void signOut_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new LoginPage());
@@ -49,6 +39,10 @@ namespace RecipeApp
         private async void infoButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new InfoPage());
+        }
+        private async void goToSaved_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RecipeListPage());
         }
 
     }

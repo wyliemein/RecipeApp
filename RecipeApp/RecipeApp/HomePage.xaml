@@ -13,12 +13,14 @@
             <Button x:Name="goToSearch" Text="Find a Recipe"
                     TextColor="Green" BackgroundColor="Silver"
                     Clicked="goToSearch_OnClicked" />
-            <Entry x:Name="recipeUrl" Placeholder="Recipe URL" IsVisible="false"/>
+            <Button Clicked="goToSaved_OnClicked"  TextColor="Green"
+                    Text="Saved Recipes" BackgroundColor="Silver" />
+<!--            <Entry x:Name="recipeUrl" Placeholder="Recipe URL" IsVisible="false"/>
             <Entry x:Name="recipeName" Placeholder="Name" IsVisible="false"/>
             <Entry x:Name="recipeIngredients" Placeholder="Ingredients" IsVisible="false"/>
             <Button x:Name="addRecipe" Text="Add Recipe"
                     TextColor="Green" BackgroundColor="Silver"
-                    Clicked="addRecipe_OnClicked" IsVisible="false"/>
+                    Clicked="addRecipe_OnClicked" IsVisible="false"/>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

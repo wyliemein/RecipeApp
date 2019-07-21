@@ -1,6 +1,6 @@
 ﻿namespace XamarinFirebase.Model
 {
-    public class Recipe
+    public class Recipes
     {
         public string URL { get; set; }
         public string Name { get; set; }
@@ -25,6 +25,13 @@
         public string VitaminA { get; set; }
         public string VitaminB6 { get; set; }
         public string VitaminC { get; set; }
+    }
+
+    public class SavedRecipes
+    {
+        public string URL { get; set; }
+        public string Name { get; set; }
+        public string Ingredient { get; set; }
     }
    
 }

@@ -6,16 +6,19 @@
                 <Label Text="Recipe Page" HorizontalTextAlignment="Center" FontSize="Large"/>
                 <Label x:Name="name"
                     Text ="Recipe Name: "/>
-
                 <Label x:Name="url"
                     Text="Recipe URL: "/>
-                      
                 <Label x:Name="ingredients"
                     Text="Recipe Ingredients: "/>
-                <Button x:Name="nextRecipe"
-                        Text="Next Recipe" BackgroundColor="Silver"
-                        TextColor="Green"
-                        Clicked="nextRecipe_OnClicked"/>
+                <StackLayout Orientation="Horizontal" >
+                    <Button Text="Save Recipe" HorizontalOptions="StartAndExpand"
+                            Clicked="SaveRecipe_OnClicked"  TextColor="Green"
+                             BackgroundColor="Silver"/>
+                    <Button x:Name="nextRecipe"
+                            Text="Next Recipe" BackgroundColor="Silver"
+                            TextColor="Green" HorizontalOptions="EndAndExpand"
+                            Clicked="nextRecipe_OnClicked"/>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -14,12 +14,12 @@ namespace XamarinFirebase.Helper
     {
         FirebaseClient firebase = new FirebaseClient("https://recipe-37835.firebaseio.com/");
 
-        public async Task<List<Recipe>> GetAllRecipes()
+        public async Task<List<Recipes>> GetAllRecipes()
         {
 
             return (await firebase
               .Child("Recipes")
-              .OnceAsync<Recipe>()).Select(item => new Recipe
+              .OnceAsync<Recipes>()).Select(item => new Recipes
               {
                   Name = item.Object.Name,
                   URL = item.Object.URL,
@@ -47,22 +47,22 @@ namespace XamarinFirebase.Helper
               }).ToList();
         }
 
-        public async Task AddRecipe(string RecipeUrl, string name, string RecipeIngredients)
+        public async Task AddSavedRecipe(string RecipeUrl, string name, string RecipeIngredients)
         {
 
             await firebase
-              .Child("Recipes")
-              .PostAsync(new Recipe() { URL = RecipeUrl, Name = name, Ingredient = RecipeIngredients });
+              .Child("Saved Recipes")
+              .PostAsync(new SavedRecipes() { URL = RecipeUrl, Name = name, Ingredient = RecipeIngredients });
         }
 
-        public async Task<List<Recipe>> GetRecipe(string search, string type)
+        public async Task<List<Recipes>> GetRecipe(string search, string type)
         {
             var allRecipies = await GetAllRecipes();
 
 
             await firebase
               .Child("Recipes")
-              .OnceAsync<Recipe>();
+              .OnceAsync<Recipes>();
             if (type == "Ingredient")//if there are restricted ingredients filter for them.
             {
                 return allRecipies.Where(a => a.Ingredient.Contains(search.ToLower()) == true).ToList();
@@ -72,6 +72,18 @@ namespace XamarinFirebase.Helper
                 return allRecipies.Where(a => a.Category.Contains(search.ToLower()) == true).ToList();
             }
             return null;
+        }
+
+        public async Task<List<SavedRecipes>> GetAllSavedRecipes()
+        {
+            return (await firebase
+              .Child("Saved Recipes")
+              .OnceAsync<SavedRecipes>()).Select(item => new SavedRecipes
+              {
+                  Name = item.Object.Name,
+                  URL = item.Object.URL,
+                  Ingredient = item.Object.Ingredient
+              }).ToList();
         }
     }
 }
