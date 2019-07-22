@@ -135,9 +135,6 @@
     <PackageReference Include="Xamarin.Build.Download">
       <Version>0.4.11</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Firebase.Core">
-      <Version>60.1142.1</Version>
-    </PackageReference>
     <PackageReference Include="Xamarin.Firebase.iOS.Auth">
       <Version>5.0.4.1</Version>
     </PackageReference>

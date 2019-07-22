@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using RecipeApp.iOS;
+using RecipeApp;
 using Xamarin.Forms;
 using Firebase.Auth;
 
@@ -9,23 +10,20 @@ using Firebase.Auth;
 
 namespace RecipeApp.iOS
 {
-    public class OFirebaseAuthClass
+    public class OFirebaseAuthClass 
     {
         public async Task<string> LoginWithEmailPassword(string email, string password)
         {
-            var authDataResult = await Auth.DefaultInstance.SignInWithPasswordAsync(
-                email,
-                password);
+            try
+            {
+                var user = await Auth.DefaultInstance.SignInWithPasswordAsync(email, password);
+                return await user.User.GetIdTokenAsync();
+            }
+            catch (Exception e)
+            {
+                return "";
+            }
 
-            return await authDataResult.User.GetIdTokenAsync();
-
-        }
-
-        public async Task<string> SignupWithEmailPasswordAsync(string email, string password)
-        {
-            var authDataResult = await Auth.DefaultInstance.CreateUserAsync(email, password);
-
-            return await authDataResult.User.GetIdTokenAsync();
         }
     }
 }
