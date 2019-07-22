@@ -111,6 +111,7 @@ namespace RecipeApp
                 Link = person[index].URL;
 
                 temp = person;
+                temp.RemoveAt(index);
                 await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
                 clearFeild(DeIngredients);
                 clearFeild(calories);

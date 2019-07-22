@@ -32,8 +32,6 @@ namespace RecipeApp
 
         private async void nextRecipe_OnClicked(object sender, EventArgs e)
         {
-            if (SearchPage.temp.Count != 0)
-            {
                 int index = getRandomNumber(SearchPage.temp.Count);
                 this.index = index;
 
@@ -71,13 +69,9 @@ namespace RecipeApp
                 else
                 {
                     await DisplayAlert("All Out", "There are no more recipes available", "OK");
+                    await Navigation.PushAsync(new SearchPage());
                 }
-            }
-            else
-            {
-                await DisplayAlert("All Out", "There are no more recipes available", "OK");
-                await Navigation.PushAsync(new SearchPage());
-            }
+            
 
         }
         protected void GoURL(object sender, EventArgs e)
