@@ -20,6 +20,8 @@ namespace RecipeApp
             Navigation.PushAsync(new LoginPage());
         }
 
+        IFirebaseAuthenticator firebaseAuthenticator;
+
         //protected async override void OnAppearing()
         //{
 
@@ -34,7 +36,15 @@ namespace RecipeApp
         }
         private async void signOut_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage());
+            string check = await firebaseAuthenticator.SignOut().ConfigureAwait(false);
+            if (check != "")
+            {
+                await Navigation.PushAsync(new LoginPage());
+            }
+            else
+            {
+                await DisplayAlert("error", "Unable to signout", "ok");
+            }
         }
         private async void infoButton_OnClicked(object sender, EventArgs e)
         {

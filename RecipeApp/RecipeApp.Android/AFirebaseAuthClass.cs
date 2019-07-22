@@ -31,6 +31,20 @@ namespace RecipeApp.Droid
             var token = await user.User.GetIdTokenAsync(false);
             return token.Token;
         }
+        public async Task<string> SignOut()
+        {
+            try
+            {
+                FirebaseAuth.Instance.SignOut();
+                return "Complete";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return "";
+            }
+        }
+
         public bool CurrentUser(bool initial)
         {
             var current = FirebaseAuth.Instance.CurrentUser;
