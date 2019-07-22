@@ -118,7 +118,7 @@ namespace RecipeApp
             string tempVitA = SearchPage.temp[index].VitaminA;
             string tempVitB6 = SearchPage.temp[index].VitaminB6;
             string tempVitC = SearchPage.temp[index].VitaminC;
-            string tempCategory = SearchPage.temp[index].Category;
+            string tempCategory = SearchPage.temp[index].Categroy;
             await firebaseHelper.AddSavedRecipe(tempnURL, tempname, tempIng, tempCalc, tempCal, tempColes,
                 tempFiber, tempFolate, tempIron, tempMag, tempNiac, tempPot, tempProtien, tempSaturatedFat,
                 tempSodium, tempSugars, tempThiamin, tempCarbs,tempFat, tempVitA, tempVitB6, tempVitC, tempCategory);

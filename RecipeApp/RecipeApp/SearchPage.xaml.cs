@@ -54,7 +54,7 @@ namespace RecipeApp
             string type = "";
 
 
-            List<Recipes> person = await firebaseHelper.GetAllRecipes();
+            List<Recipes> person = await firebaseHelper.GetAllRecipes("Recipe");
 
             if (diet == null && deIn == null && calIn == null) {
                 await DisplayAlert("Fail", "Enter at least one Field", "OK");
@@ -120,6 +120,8 @@ namespace RecipeApp
             {
                 await DisplayAlert("Success", "No Recipe Available", "OK");
                 clearFeild(DeIngredients);
+                clearFeild(calories);
+                dietLabel.Text = "";
             }
         }
         private void clearFeild(Entry entry)

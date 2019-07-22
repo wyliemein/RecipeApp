@@ -59,7 +59,7 @@ namespace RecipeApp
                 {
                     SavedRecipes.Add(new Recipes { Name = item.Name, URL = item.URL, Calcium = item.Calcium,
                     Calories = item.Calories, Ingredient = item.Ingredient, Cholesterol = item.Cholesterol,
-                    Category = item.Category, DietaryFiber = item.DietaryFiber, Folate = item.Folate, Iron = item.Iron,
+                    Categroy = item.Categroy, DietaryFiber = item.DietaryFiber, Folate = item.Folate, Iron = item.Iron,
                     Magnesium = item.Magnesium, Niacin = item.Niacin, Potassium = item.Potassium, Protein = item.Protein,
                     SaturatedFat = item.SaturatedFat, Sodium = item.Sodium, Sugars = item.Sugars, Thiamin = item.Thiamin,
                     TotalCarbohydrates = item.TotalCarbohydrates, TotalFat = item.TotalFat, VitaminA = item.VitaminA,
