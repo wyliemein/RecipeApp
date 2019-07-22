@@ -17,6 +17,8 @@
                 </Label>
                 <Label x:Name="ingredients"
                     Text="Recipe Ingredients: "/>
+                <Label x:Name="nutrition"
+                    Text="Recipe Nutrition: "/>
                 <StackLayout Orientation="Horizontal" >
                     <Button Text="Save Recipe" HorizontalOptions="StartAndExpand"
                             Clicked="SaveRecipe_OnClicked"  TextColor="Green"

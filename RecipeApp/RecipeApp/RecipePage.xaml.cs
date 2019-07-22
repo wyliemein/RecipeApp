@@ -17,10 +17,16 @@ namespace RecipeApp
         public RecipePage()
         {
             InitializeComponent();
-            
+            Uri uri = new Uri(SearchPage.Link);
             name.Text = "Recipe Name: " +SearchPage.ResName;
             url.Text = SearchPage.Link;
             ingredients.Text = "Recipe Ingredients: \n" + SearchPage.IngredientList;
+            nutrition.Text = "Recipe Nutrition: \n"+ " \n Calcium:" + SearchPage.CalciumList +
+               " \n Calories:" + SearchPage.CaloriesList + " \n Cholesterol:" + SearchPage.CholesterolList + " \n DietaryFiber:" + SearchPage.DietaryFiberList + " \n Folate:" + SearchPage.FolateList
+                + " \n Iron:" + SearchPage.IronList + " \n Magnesium:" + SearchPage.MagnesiumList + " \n Niacin:" + SearchPage.NiacinList + " \n Potassium:" + SearchPage.PotassiumList 
+               + " \n Protein:" + SearchPage.ProteinList + " \n Saturated Fat:" + SearchPage.SaturatedFatList + " \n Sodium:" + SearchPage.SodiumList + " \n Sugars:" + SearchPage.SugarsList +
+               " \n Thiamin:" + SearchPage.ThiaminList + " \n Total Carbohydrates:" + SearchPage.TotalCarbohydratesList + " \n Total Fat:" + SearchPage.TotalFatList + " \n Vitamin A:" + SearchPage.VitaminAList 
+               + " \n Vitamin B6:" + SearchPage.VitaminB6List + " \n Vitamin C:" + SearchPage.VitaminCList;
         }
         int index = SearchPage.index;
 
