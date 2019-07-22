@@ -54,7 +54,7 @@ namespace RecipeApp
             string type = "";
 
 
-            List<Recipes> person = await firebaseHelper.GetAllRecipes();
+            List<Recipes> person = await firebaseHelper.GetAllRecipes("Recipes");
 
             if (diet == null && deIn == null && calIn == null) {
                 await DisplayAlert("Fail", "Enter at least one Field", "OK");
