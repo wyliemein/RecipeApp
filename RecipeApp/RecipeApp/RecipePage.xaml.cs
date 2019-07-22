@@ -27,17 +27,18 @@ namespace RecipeApp
                + " \n Protein:" + SearchPage.ProteinList + " \n Saturated Fat:" + SearchPage.SaturatedFatList + " \n Sodium:" + SearchPage.SodiumList + " \n Sugars:" + SearchPage.SugarsList +
                " \n Thiamin:" + SearchPage.ThiaminList + " \n Total Carbohydrates:" + SearchPage.TotalCarbohydratesList + " \n Total Fat:" + SearchPage.TotalFatList + " \n Vitamin A:" + SearchPage.VitaminAList 
                + " \n Vitamin B6:" + SearchPage.VitaminB6List + " \n Vitamin C:" + SearchPage.VitaminCList;
+            Console.WriteLine("INDEX AT Entry: " + index);
         }
-        int index = SearchPage.index;
+
+        private int index;// = SearchPage.index;
 
         private async void nextRecipe_OnClicked(object sender, EventArgs e)
         {
             if (SearchPage.temp.Count != 0)
             {
-                int index = getRandomNumber(SearchPage.temp.Count);
-                this.index = index;
+                this.index = getRandomNumber(SearchPage.temp.Count);
 
-                SearchPage.ResName = SearchPage.temp[this.index].Name;
+                SearchPage.ResName = SearchPage.temp[index].Name;
                 SearchPage.Link = SearchPage.temp[index].URL;
                 SearchPage.IngredientList = SearchPage.temp[index].Ingredient;
                 SearchPage.CalciumList = SearchPage.temp[index].Calcium;
@@ -65,6 +66,7 @@ namespace RecipeApp
                 SearchPage.IngredientList = SearchPage.IngredientList.Replace("', '", "\n");
                 if (SearchPage.temp.Count > 1)
                 {
+                    Console.WriteLine("INDEX TO BE REMOVED: "+ index);
                     SearchPage.temp.RemoveAt(index);
                     await Navigation.PushAsync(new RecipePage());
                 }
@@ -98,6 +100,7 @@ namespace RecipeApp
         }
         private async Task SaveAsync()
         {
+            Console.WriteLine("INDEX TO BE SAVED: " + index);
             string tempname = SearchPage.temp[index].Name;
             string tempnURL = SearchPage.temp[index].URL;
             string tempIng = SearchPage.temp[index].Ingredient;
