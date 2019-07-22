@@ -1,40 +1,42 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RecipeApp.SearchPage">
     <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="30">
-            <Label Text="Search Page" HorizontalTextAlignment="Center" FontSize="Large" />       
-            <Picker x:Name="dietType"
-                    Title="Select a Diet Type">
-              <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                  <x:String>Vegan</x:String>
-                  <x:String>Vegetarian</x:String>
-                  <x:String>Pescatarian</x:String>
-                  <x:String>Gluten Free</x:String>
-                  <x:String>None</x:String>
-                </x:Array>
-              </Picker.ItemsSource>
-            </Picker>
-            <Label Text="{Binding Source={x:Reference dietType}, Path=SelectedItem}" 
-                   x:Name="dietLabel" IsVisible="false"/>
-           <!-- <Entry Placeholder="Desired Ingredients"/> -->  
-            <Entry x:Name="DeIngredients" 
-                   Placeholder="Desired Ingredients" />
-            <Entry x:Name="calories" 
-                   Placeholder="Max calories want to take" 
-                   Keyboard="Numeric"/>
-            <Button Text="Search" x:Name="recipeSearch"
-                    TextColor="Green" BackgroundColor="Silver"
-                    Clicked="recipeSearch_OnClicked" />
-            
-          <!--  <ListView x:Name="lstPersons">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding Name}"></TextCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
-            
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="10">
+                <Label Text="Search Page" HorizontalTextAlignment="Center" FontSize="Large" />       
+                <Picker x:Name="dietType"
+                        Title="Select a Diet Type">
+                  <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                      <x:String>Vegan</x:String>
+                      <x:String>Vegetarian</x:String>
+                      <x:String>Pescatarian</x:String>
+                      <x:String>Gluten Free</x:String>
+                      <x:String>None</x:String>
+                    </x:Array>
+                  </Picker.ItemsSource>
+                </Picker>
+                <Label Text="{Binding Source={x:Reference dietType}, Path=SelectedItem}" 
+                       x:Name="dietLabel" IsVisible="false"/>
+               <!-- <Entry Placeholder="Desired Ingredients"/> -->  
+                <Entry x:Name="DeIngredients" 
+                       Placeholder="Desired Ingredients" />
+                <Entry x:Name="calories" 
+                       Placeholder="Max calories want to take" 
+                       Keyboard="Numeric"/>
+                <Button Text="Search" x:Name="recipeSearch"
+                        TextColor="Green" BackgroundColor="Silver"
+                        Clicked="recipeSearch_OnClicked" />
+                
+              <!--  <ListView x:Name="lstPersons">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}"></TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+                
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -83,7 +83,29 @@ namespace RecipeApp
             string tempname = SearchPage.temp[index].Name;
             string tempnURL = SearchPage.temp[index].URL;
             string tempIng = SearchPage.temp[index].Ingredient;
-            await firebaseHelper.AddSavedRecipe(tempnURL, tempname, tempIng);
+            string tempCalc = SearchPage.temp[index].Calcium;
+            int tempCal = SearchPage.temp[index].Calories;
+            string tempColes = SearchPage.temp[index].Cholesterol;
+            string tempFiber = SearchPage.temp[index].DietaryFiber;
+            string tempFolate = SearchPage.temp[index].Folate;
+            string tempIron = SearchPage.temp[index].Iron;
+            string tempMag = SearchPage.temp[index].Magnesium;
+            string tempNiac = SearchPage.temp[index].Niacin;
+            string tempPot = SearchPage.temp[index].Potassium;
+            string tempProtien = SearchPage.temp[index].Protein;
+            string tempSaturatedFat= SearchPage.temp[index].SaturatedFat;
+            string tempSodium = SearchPage.temp[index].Sodium;
+            string tempSugars = SearchPage.temp[index].Sugars;
+            string tempThiamin = SearchPage.temp[index].Thiamin;
+            string tempCarbs = SearchPage.temp[index].TotalCarbohydrates;
+            string tempFat = SearchPage.temp[index].TotalFat;
+            string tempVitA = SearchPage.temp[index].VitaminA;
+            string tempVitB6 = SearchPage.temp[index].VitaminB6;
+            string tempVitC = SearchPage.temp[index].VitaminC;
+            string tempCategory = SearchPage.temp[index].Category;
+            await firebaseHelper.AddSavedRecipe(tempnURL, tempname, tempIng, tempCalc, tempCal, tempColes,
+                tempFiber, tempFolate, tempIron, tempMag, tempNiac, tempPot, tempProtien, tempSaturatedFat,
+                tempSodium, tempSugars, tempThiamin, tempCarbs,tempFat, tempVitA, tempVitB6, tempVitC, tempCategory);
         }
     }
 }

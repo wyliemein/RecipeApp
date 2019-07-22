@@ -4,10 +4,10 @@
         <StackLayout >
             <Label x:Name="l" Text="Saved Recipes"/>
             <ListView x:Name="RecipeListView"
-                ItemsSource="{Binding SavedRecipes}">
+                ItemsSource="{Binding Recipes}" ItemSelected="Handle_ItemSelectedAsync">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                       <TextCell Text="{Binding DisplayName}" />
+                       <TextCell Text="{Binding Name}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

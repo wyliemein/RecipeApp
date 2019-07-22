@@ -14,11 +14,11 @@ namespace XamarinFirebase.Helper
     {
         FirebaseClient firebase = new FirebaseClient("https://recipe-37835.firebaseio.com/");
 
-        public async Task<List<Recipes>> GetAllRecipes()
+        public async Task<List<Recipes>> GetAllRecipes(string type)
         {
 
             return (await firebase
-              .Child("Recipes")
+              .Child(type)
               .OnceAsync<Recipes>()).Select(item => new Recipes
               {
                   Name = item.Object.Name,
@@ -47,17 +47,45 @@ namespace XamarinFirebase.Helper
               }).ToList();
         }
 
-        public async Task AddSavedRecipe(string RecipeUrl, string name, string RecipeIngredients)
+        public async Task AddSavedRecipe(string RecipeUrl, string name, string RecipeIngredients, string Calcium, int Calories,
+            string Cholesterol, string Fiber, string Folate, string Iron, string Magnesium, string Niacin, string Potasium, string Protien,
+            string SatFats, string Sodium, string Sugars, string Thiamin, string Carbs, string Fats, string VitA, string VitB6,
+            string VitC, string Category)
         {
 
             await firebase
               .Child("Saved Recipes")
-              .PostAsync(new SavedRecipes() { URL = RecipeUrl, Name = name, Ingredient = RecipeIngredients });
+              .PostAsync(new SavedRecipes()
+              {
+                  URL = RecipeUrl,
+                  Name = name,
+                  Ingredient = RecipeIngredients,
+                  Calcium = Calcium,
+                  Calories = Calories,
+                  Cholesterol = Cholesterol,
+                  DietaryFiber = Fiber,
+                  Folate = Folate,
+                  Iron = Iron,
+                  Magnesium = Magnesium,
+                  Niacin = Niacin,
+                  Potassium = Potasium,
+                  Protein = Protien,
+                  SaturatedFat = SatFats,
+                  Sodium = Sodium,
+                  Sugars = Sugars,
+                  Thiamin = Thiamin,
+                  TotalCarbohydrates = Carbs,
+                  TotalFat = Fats,
+                  VitaminA = VitA,
+                  VitaminB6 = VitB6,
+                  VitaminC = VitC,
+                  Category = Category
+              });
         }
 
         public async Task<List<Recipes>> GetRecipe(string search, string type)
         {
-            var allRecipies = await GetAllRecipes();
+            var allRecipies = await GetAllRecipes("Recipes");
 
 
             await firebase
@@ -72,18 +100,6 @@ namespace XamarinFirebase.Helper
                 return allRecipies.Where(a => a.Category.Contains(search.ToLower()) == true).ToList();
             }
             return null;
-        }
-
-        public async Task<List<SavedRecipes>> GetAllSavedRecipes()
-        {
-            return (await firebase
-              .Child("Saved Recipes")
-              .OnceAsync<SavedRecipes>()).Select(item => new SavedRecipes
-              {
-                  Name = item.Object.Name,
-                  URL = item.Object.URL,
-                  Ingredient = item.Object.Ingredient
-              }).ToList();
         }
     }
 }
