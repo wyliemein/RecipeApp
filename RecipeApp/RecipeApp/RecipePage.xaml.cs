@@ -41,11 +41,6 @@ namespace RecipeApp
                 index = i;
                 string IngredientList = SearchPage.temp[i].Ingredient;
 
-                char[] toTrim = { '[', '\'', ']' };
-                SearchPage.IngredientList = IngredientList.TrimStart(toTrim); //trims " [' " from start
-                SearchPage.IngredientList = IngredientList.TrimEnd(toTrim); //trims " ] " from end
-                SearchPage.IngredientList = IngredientList.Replace(", ", "\n");
-
                 SearchPage.ResName = SearchPage.temp[i].Name;
                 SearchPage.Link = SearchPage.temp[i].URL;
               
@@ -62,7 +57,7 @@ namespace RecipeApp
             }
 
         }
-        protected void GoGoogle(object sender, EventArgs e)
+        protected void GoURL(object sender, EventArgs e)
         {
             Device.OpenUri(new Uri(SearchPage.Link));
         }

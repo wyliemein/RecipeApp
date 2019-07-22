@@ -7,7 +7,7 @@
         public string Ingredient { get; set; }
         public string Calcium { get; set; }
         public int Calories { get; set; }
-        public string Category { get; set; }
+        public string Categroy { get; set; }
         public string Cholesterol { get; set; }
         public string DietaryFiber { get; set; }
         public string Folate { get; set; }
