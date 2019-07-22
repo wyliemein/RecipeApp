@@ -6,8 +6,15 @@
                 <Label Text="Recipe Page" HorizontalTextAlignment="Center" FontSize="Large"/>
                 <Label x:Name="name"
                     Text ="Recipe Name: "/>
+                
                 <Label x:Name="url"
-                    Text="Recipe URL: "/>
+                    Text="Recipe Name: "
+                    TextColor="Blue"
+                    TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoGoogle" />
+                    </Label.GestureRecognizers>
+                </Label>
                 <Label x:Name="ingredients"
                     Text="Recipe Ingredients: "/>
                 <StackLayout Orientation="Horizontal" >

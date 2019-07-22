@@ -32,7 +32,17 @@ namespace RecipeApp
             string deIn = DeIngredients.Text;
             string diet = dietLabel.Text;
             string search = deIn;
-            string type = "Ingredient";
+            string type = "";
+
+            if (diet==null) {
+                type = "Ingredient"; }
+
+
+            if (type == "") {
+                await DisplayAlert("Fail", "Enter at least one field", "OK");
+                return;
+            }
+
             List<Recipes> person = await firebaseHelper.GetRecipe(search, type);
 
             if (person.Count != 0)

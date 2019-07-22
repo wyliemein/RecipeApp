@@ -11,6 +11,7 @@
                   <x:String>Vegetarian</x:String>
                   <x:String>Pescatarian</x:String>
                   <x:String>Gluten Free</x:String>
+                  <x:String>None</x:String>
                 </x:Array>
               </Picker.ItemsSource>
             </Picker>
@@ -19,6 +20,9 @@
            <!-- <Entry Placeholder="Desired Ingredients"/> -->  
             <Entry x:Name="DeIngredients" 
                    Placeholder="Desired Ingredients" />
+            <Entry x:Name="calories" 
+                   Placeholder="Max calories want to take" 
+                   Keyboard="Numeric"/>
             <Button Text="Search" x:Name="recipeSearch"
                     TextColor="Green" BackgroundColor="Silver"
                     Clicked="recipeSearch_OnClicked" />

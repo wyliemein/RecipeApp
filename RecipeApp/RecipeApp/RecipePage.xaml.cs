@@ -17,9 +17,9 @@ namespace RecipeApp
         public RecipePage()
         {
             InitializeComponent();
-            Uri uri = new Uri(SearchPage.Link);
+            
             name.Text = "Recipe Name: " +SearchPage.ResName;
-            url.Text = "Recipe Url: " + SearchPage.Link;
+            url.Text = SearchPage.Link;
             ingredients.Text = "Recipe Ingredients: \n" + SearchPage.IngredientList;
         }
         int index = SearchPage.index;
@@ -56,7 +56,10 @@ namespace RecipeApp
             }
 
         }
-        
+        protected void GoGoogle(object sender, EventArgs e)
+        {
+            Device.OpenUri(new Uri(SearchPage.Link));
+        }
         private int getRandomNumber(int size)
             //Takes an int value = to size of an array and returns a random index within that range
         {
