@@ -18,9 +18,18 @@ namespace RecipeApp
             {
                 if (IsValidEmail(email.Text))
                 {
-                    var token = await DependencyService.Get<IFirebaseAuthenticator>().LoginWithEmailPassword(email.Text, password.Text);
-                    await DisplayAlert("Logged in", "Token" + token, "Ok");
-                    await Navigation.PushAsync(new HomePage());
+                    var check = await DependencyService.Get<IFirebaseAuthenticator>().LoginWithEmailPassword(email.Text, password.Text);
+                    if (check != "")
+                    {
+                        //var token = await DependencyService.Get<IFirebaseAuthenticator>().LoginWithEmailPassword(email.Text, password.Text);
+                        await DisplayAlert("Logged in", "Token" + check, "Ok");
+                        await Navigation.PushAsync(new HomePage());
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Invalid Credentials", "Ok");
+                    }
+
                 }
                 else
                 {
