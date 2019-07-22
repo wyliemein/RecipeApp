@@ -85,7 +85,6 @@ namespace XamarinFirebase.Helper
 
         public async Task<List<Recipes>> GetRecipe(string search, List<Recipes> initialrecipes,string type)
         {
-            var allRecipies = await GetAllRecipes("Recipes");
 
 
             await firebase
