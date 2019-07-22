@@ -66,22 +66,20 @@ namespace RecipeApp
                 SearchPage.IngredientList = SearchPage.IngredientList.Replace("', '", "\n");
                 if (SearchPage.temp.Count > 1)
                 {
-                    Console.WriteLine("INDEX TO BE REMOVED: "+ index);
+                    Console.WriteLine("INDEX TO BE REMOVED: " + index);
                     SearchPage.temp.RemoveAt(index);
                     await Navigation.PushAsync(new RecipePage());
                 }
                 else
                 {
                     await DisplayAlert("All Out", "There are no more recipes available", "OK");
+                    await Navigation.PushAsync(new SearchPage());
                 }
-            }
-            else
-            {
-                await DisplayAlert("All Out", "There are no more recipes available", "OK");
-                await Navigation.PushAsync(new SearchPage());
-            }
 
+
+            }
         }
+
         protected void GoURL(object sender, EventArgs e)
         {
             Device.OpenUri(new Uri(SearchPage.Link));
