@@ -50,19 +50,31 @@ namespace RecipeApp
 
             string deIn = DeIngredients.Text;
             string diet = dietLabel.Text;
-            string search = deIn;
+            string calIn = calories.Text;
             string type = "";
 
-            if (diet==null) {
-                type = "Ingredient"; }
 
+            List<Recipes> person = await firebaseHelper.GetAllRecipes();
 
-            if (type == "") {
-                await DisplayAlert("Fail", "Enter at least one field", "OK");
+            if (diet == null && deIn == null && calIn == null) {
+                await DisplayAlert("Fail", "Enter at least one Field", "OK");
                 return;
             }
 
-            List<Recipes> person = await firebaseHelper.GetRecipe(search, type);
+            if (diet != null&& diet != "None") {
+                type ="Category";
+                person = await firebaseHelper.GetRecipe(diet, person,type);
+            }
+            if (deIn != null)
+            {
+                type = "Ingredient";
+                person = await firebaseHelper.GetRecipe(deIn, person,type);
+            }
+            if (calIn != null)
+            {
+                type = "Calories";
+                person = await firebaseHelper.GetRecipe(calIn, person,type);
+            }
 
             if (person.Count != 0)
             {
@@ -90,10 +102,10 @@ namespace RecipeApp
                 VitaminCList = person[index].VitaminC;
 
 
-                //char[] toTrim = {'[', '\'', ']'};
-               // IngredientList = IngredientList.TrimStart(toTrim); //trims " [' " from start
-               // IngredientList = IngredientList.TrimEnd(toTrim); //trims " ] " from end
-               // IngredientList = IngredientList.Replace(", ", "\n");
+                char[] toTrim = {'[', '\'', ']'};
+                IngredientList = IngredientList.TrimStart(toTrim); //trims " [' " from start
+                IngredientList = IngredientList.TrimEnd(toTrim); //trims " ] " from end
+                IngredientList = IngredientList.Replace("', '", "\n");
 
                 ResName = person[index].Name;
                 Link = person[index].URL;
@@ -101,6 +113,7 @@ namespace RecipeApp
                 temp = person;
                 await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
                 clearFeild(DeIngredients);
+                clearFeild(calories);
                 await Navigation.PushAsync(new RecipePage());
             }
             else
@@ -111,7 +124,7 @@ namespace RecipeApp
         }
         private void clearFeild(Entry entry)
         {
-            entry.Text = string.Empty;
+            entry.Text = null;
         }
     }
 }

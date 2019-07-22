@@ -12,7 +12,7 @@
                     TextColor="Blue"
                     TextDecorations="Underline">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GoGoogle" />
+                        <TapGestureRecognizer Tapped="GoURL" />
                     </Label.GestureRecognizers>
                 </Label>
                 <Label x:Name="ingredients"

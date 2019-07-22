@@ -26,7 +26,7 @@ namespace XamarinFirebase.Helper
                   Ingredient = item.Object.Ingredient,
                   Calcium = item.Object.Calcium,
                   Calories = item.Object.Calories,
-                  Category = item.Object.Category,
+                  Categroy = item.Object.Categroy,
                   Cholesterol = item.Object.Cholesterol,
                   DietaryFiber = item.Object.DietaryFiber,
                   Folate = item.Object.Folate,
@@ -83,7 +83,7 @@ namespace XamarinFirebase.Helper
               });
         }
 
-        public async Task<List<Recipes>> GetRecipe(string search, string type)
+        public async Task<List<Recipes>> GetRecipe(string search, List<Recipes> initialrecipes,string type)
         {
             var allRecipies = await GetAllRecipes("Recipes");
 
@@ -91,15 +91,16 @@ namespace XamarinFirebase.Helper
             await firebase
               .Child("Recipes")
               .OnceAsync<Recipes>();
-            if (type == "Ingredient")//if there are restricted ingredients filter for them.
-            {
-                return allRecipies.Where(a => a.Ingredient.Contains(search.ToLower()) == true).ToList();
+
+            if (type == "Ingredient") {
+                return initialrecipes.Where(a => a.Ingredient.Contains(search.ToLower()) == true).ToList();
             }
-            if (type == "Category")//if there are restricted ingredients filter for them.
+            if (type == "Category")
             {
-                return allRecipies.Where(a => a.Category.Contains(search.ToLower()) == true).ToList();
+                return initialrecipes.Where(a => a.Categroy.Contains(search.ToLower()) == true).ToList();
             }
             return null;
+
         }
     }
 }
