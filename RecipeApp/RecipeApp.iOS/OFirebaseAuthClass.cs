@@ -10,7 +10,7 @@ using Firebase.Auth;
 
 namespace RecipeApp.iOS
 {
-    public class OFirebaseAuthClass 
+    public class OFirebaseAuthClass
     {
         public async Task<string> LoginWithEmailPassword(string email, string password)
         {
