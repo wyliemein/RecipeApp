@@ -61,7 +61,7 @@ namespace RecipeApp
                 return;
             }
 
-            if (diet != null) {
+            if (diet != null&& diet != "None") {
                 type ="Category";
                 person = await firebaseHelper.GetRecipe(diet, person,type);
             }
@@ -105,7 +105,7 @@ namespace RecipeApp
                 char[] toTrim = {'[', '\'', ']'};
                 IngredientList = IngredientList.TrimStart(toTrim); //trims " [' " from start
                 IngredientList = IngredientList.TrimEnd(toTrim); //trims " ] " from end
-                IngredientList = IngredientList.Replace(", ", "\n");
+                IngredientList = IngredientList.Replace("', '", "\n");
 
                 ResName = person[index].Name;
                 Link = person[index].URL;
@@ -113,6 +113,7 @@ namespace RecipeApp
                 temp = person;
                 await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
                 clearFeild(DeIngredients);
+                clearFeild(calories);
                 await Navigation.PushAsync(new RecipePage());
             }
             else
@@ -123,7 +124,7 @@ namespace RecipeApp
         }
         private void clearFeild(Entry entry)
         {
-            entry.Text = string.Empty;
+            entry.Text = null;
         }
     }
 }

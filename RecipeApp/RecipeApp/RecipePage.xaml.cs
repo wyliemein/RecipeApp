@@ -39,12 +39,33 @@ namespace RecipeApp
                 Random rnd = new Random();
                 int i = rnd.Next(0, SearchPage.temp.Count);
                 index = i;
-                string IngredientList = SearchPage.temp[i].Ingredient;
 
                 SearchPage.ResName = SearchPage.temp[i].Name;
                 SearchPage.Link = SearchPage.temp[i].URL;
-              
-                
+                SearchPage.IngredientList = SearchPage.temp[i].Ingredient;
+                SearchPage.CalciumList = SearchPage.temp[i].Calcium;
+                SearchPage.CaloriesList = SearchPage.temp[i].Calories;
+                SearchPage.CholesterolList = SearchPage.temp[i].Cholesterol;
+                SearchPage.DietaryFiberList = SearchPage.temp[i].DietaryFiber;
+                SearchPage.FolateList = SearchPage.temp[i].Folate;
+                SearchPage.IronList = SearchPage.temp[i].Iron;
+                SearchPage.MagnesiumList = SearchPage.temp[i].Magnesium;
+                SearchPage.NiacinList = SearchPage.temp[i].Niacin;
+                SearchPage.PotassiumList = SearchPage.temp[i].Potassium;
+                SearchPage.ProteinList = SearchPage.temp[i].Protein;
+                SearchPage.SaturatedFatList = SearchPage.temp[i].SaturatedFat;
+                SearchPage.SodiumList = SearchPage.temp[i].Sodium;
+                SearchPage.SugarsList = SearchPage.temp[i].Sugars;
+                SearchPage.ThiaminList = SearchPage.temp[i].Thiamin;
+                SearchPage.TotalCarbohydratesList = SearchPage.temp[i].TotalCarbohydrates;
+                SearchPage.TotalFatList = SearchPage.temp[i].TotalFat;
+                SearchPage.VitaminAList = SearchPage.temp[i].VitaminA;
+                SearchPage.VitaminB6List = SearchPage.temp[i].VitaminB6;
+                SearchPage.VitaminCList = SearchPage.temp[i].VitaminC;
+                char[] toTrim = { '[', '\'', ']' };
+                SearchPage.IngredientList = SearchPage.IngredientList.TrimStart(toTrim); //trims " [' " from start
+                SearchPage.IngredientList = SearchPage.IngredientList.TrimEnd(toTrim); //trims " ] " from end
+                SearchPage.IngredientList = SearchPage.IngredientList.Replace("', '", "\n");
                 SearchPage.temp.RemoveAt(i);
                 
 
