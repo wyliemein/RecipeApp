@@ -30,14 +30,17 @@ namespace RecipeApp
             Console.WriteLine("INDEX AT Entry: " + index);
         }
 
-        private int index;// = SearchPage.index;
+        private int index = SearchPage.index;
 
         private async void nextRecipe_OnClicked(object sender, EventArgs e)
         {
+            SearchPage.temp.RemoveAt(index);
+
             if (SearchPage.temp.Count != 0)
             {
-                this.index = getRandomNumber(SearchPage.temp.Count);
 
+                this.index = getRandomNumber(SearchPage.temp.Count);
+                SearchPage.index=this.index;
                 SearchPage.ResName = SearchPage.temp[index].Name;
                 SearchPage.Link = SearchPage.temp[index].URL;
                 SearchPage.IngredientList = SearchPage.temp[index].Ingredient;
@@ -64,20 +67,21 @@ namespace RecipeApp
                 SearchPage.IngredientList = SearchPage.IngredientList.TrimStart(toTrim); //trims " [' " from start
                 SearchPage.IngredientList = SearchPage.IngredientList.TrimEnd(toTrim); //trims " ] " from end
                 SearchPage.IngredientList = SearchPage.IngredientList.Replace("', '", "\n");
-                if (SearchPage.temp.Count > 1)
-                {
+
+                
                     Console.WriteLine("INDEX TO BE REMOVED: " + index);
-                    SearchPage.temp.RemoveAt(index);
+
                     await Navigation.PushAsync(new RecipePage());
-                }
-                else
-                {
-                    await DisplayAlert("All Out", "There are no more recipes available", "OK");
-                    await Navigation.PushAsync(new SearchPage());
-                }
-
-
+                
             }
+            else
+            {
+                await DisplayAlert("All Out", "There are no more recipes available", "OK");
+                await Navigation.PushAsync(new SearchPage());
+            }
+
+
+            
         }
 
         protected void GoURL(object sender, EventArgs e)
@@ -99,6 +103,7 @@ namespace RecipeApp
         private async Task SaveAsync()
         {
             Console.WriteLine("INDEX TO BE SAVED: " + index);
+            
             string tempname = SearchPage.temp[index].Name;
             string tempnURL = SearchPage.temp[index].URL;
             string tempIng = SearchPage.temp[index].Ingredient;
