@@ -122,10 +122,9 @@ namespace RecipeApp
                     person = await firebaseHelper.GetRecipe(word, person, type);
                 }
             }
-            if (calIn != null)
-            {
+            if (calIn != null) {
                 type = "Calories";
-                person = await firebaseHelper.GetRecipe(calIn, person,type);
+                person = await firebaseHelper.GetRecipe(calIn, person, type);
             }
 
             if (person.Count != 0)
