@@ -36,15 +36,8 @@ namespace RecipeApp
         }
         private async void signOut_OnClicked(object sender, EventArgs e)
         {
-            string check = await firebaseAuthenticator.SignOut().ConfigureAwait(false);
-            if (check != "")
-            {
-                await Navigation.PushAsync(new LoginPage());
-            }
-            else
-            {
-                await DisplayAlert("error", "Unable to signout", "ok");
-            }
+            firebaseAuthenticator.SignOut();
+            await Navigation.PushAsync(new LoginPage());
         }
         private async void infoButton_OnClicked(object sender, EventArgs e)
         {

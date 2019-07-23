@@ -131,5 +131,9 @@ namespace RecipeApp
                 tempFiber, tempFolate, tempIron, tempMag, tempNiac, tempPot, tempProtien, tempSaturatedFat,
                 tempSodium, tempSugars, tempThiamin, tempCarbs,tempFat, tempVitA, tempVitB6, tempVitC, tempCategory);
         }
+        private async void goHome_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HomePage());
+        }
     }
 }

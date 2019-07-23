@@ -31,17 +31,15 @@ namespace RecipeApp.Droid
             var token = await user.User.GetIdTokenAsync(false);
             return token.Token;
         }
-        public async Task<string> SignOut()
+        public async void SignOut()
         {
             try
             {
                 FirebaseAuth.Instance.SignOut();
-                return "Complete";
             }
-            catch (Exception ex)
+            catch (FirebaseAuthException ex)
             {
                 Console.WriteLine(ex);
-                return "";
             }
         }
 

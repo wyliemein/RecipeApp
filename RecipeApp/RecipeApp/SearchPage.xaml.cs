@@ -108,8 +108,7 @@ namespace RecipeApp
                     return;
                 }
             }
-
-            if (diet != null&& diet != "None") {
+            if (diet != null && diet != "None") {
                 type ="Category";
                 person = await firebaseHelper.GetRecipe(diet, person,type);
             }
