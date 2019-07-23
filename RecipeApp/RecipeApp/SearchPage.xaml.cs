@@ -174,7 +174,7 @@ namespace RecipeApp
             }
             else
             {
-                await DisplayAlert("Success", "No Recipe Available", "OK");
+                await DisplayAlert("Error", "No Recipe Available", "Search Again");
                 clearFeild(DeIngredients);
                 clearFeild(calories);
                 dietLabel.Text = "";
