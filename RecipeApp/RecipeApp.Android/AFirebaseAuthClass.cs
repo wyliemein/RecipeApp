@@ -16,7 +16,7 @@ namespace RecipeApp.Droid
             {
                 var user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password).ConfigureAwait(false);
                 var token = await user.User.GetIdTokenAsync(false);
-                return token.Token;
+                return user.User.Email;
             }
             catch (FirebaseAuthException e)
             {
@@ -33,24 +33,16 @@ namespace RecipeApp.Droid
         }
         public async void SignOut()
         {
-            try
+            string user = CurrentUser();
+            if (user != null)
             {
                 FirebaseAuth.Instance.SignOut();
             }
-            catch (FirebaseAuthException ex)
-            {
-                Console.WriteLine(ex);
-            }
+            Console.WriteLine("Nullllll USERRR");
         }
-
-        public bool CurrentUser(bool initial)
+        public string CurrentUser()
         {
-            var current = FirebaseAuth.Instance.CurrentUser;
-            if (current != null)
-            {
-                return true;
-            }
-            return false;
+            return FirebaseAuth.Instance.CurrentUser.Email;
         }
     }
 }

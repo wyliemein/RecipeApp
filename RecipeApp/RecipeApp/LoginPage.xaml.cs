@@ -22,7 +22,7 @@ namespace RecipeApp
                     if (check != "")
                     {
                         //var token = await DependencyService.Get<IFirebaseAuthenticator>().LoginWithEmailPassword(email.Text, password.Text);
-                        await DisplayAlert("Logged in", "Token" + check, "Ok");
+                        await DisplayAlert("Success", "User " + check + " is signed in.", "Ok");
                         await Navigation.PushAsync(new HomePage());
                     }
                     else
