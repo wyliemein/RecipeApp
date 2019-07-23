@@ -20,7 +20,7 @@
                 <Label x:Name="nutrition"
                     Text="Recipe Nutrition: "/>
                  <Button Text="Delete" x:Name="recipeDelete"
-                        TextColor="Green" BackgroundColor="Silver"
+                        TextColor="White" BackgroundColor="Red"
                         Clicked="recipeDelete_OnClicked" />
             </StackLayout>
         </ScrollView>
