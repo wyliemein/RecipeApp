@@ -83,7 +83,7 @@ namespace XamarinFirebase.Helper
               });
         }
 
-        public async Task<List<Recipes>> GetRecipe(string search, List<Recipes> initialrecipes,string type)
+        public async Task<List<Recipes>> GetRecipe(string search, List<Recipes> initialrecipes, string type)
         {
 
 
@@ -91,13 +91,19 @@ namespace XamarinFirebase.Helper
               .Child("Recipes")
               .OnceAsync<Recipes>();
 
-            if (type == "Ingredient") {
+            if (type == "Ingredient")
+            {
                 return initialrecipes.Where(a => a.Ingredient.Contains(search.ToLower()) == true).ToList();
             }
             if (type == "Category")
             {
                 return initialrecipes.Where(a => a.Categroy.Contains(search.ToLower()) == true).ToList();
             }
+            if (type == "Calories")
+            {
+                return initialrecipes.Where(a => a.Calories <= Convert.ToInt32(search)).ToList();
+            }
+
             return null;
 
         }
