@@ -3,6 +3,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20" Spacing="30">
+                <Button Text="Home" Clicked="gotoHome_Onclicked" HorizontalOptions="End"/>
                 <Label Text="Recipe Page" HorizontalTextAlignment="Center" FontSize="Large"/>
                 <Label x:Name="name"
                     Text ="Recipe Name: "/>
