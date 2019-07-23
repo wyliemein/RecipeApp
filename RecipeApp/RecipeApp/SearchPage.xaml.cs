@@ -108,8 +108,7 @@ namespace RecipeApp
                     return;
                 }
             }
-
-            if (diet != null&& diet != "None") {
+            if (diet != null && diet != "None") {
                 type ="Category";
                 person = await firebaseHelper.GetRecipe(diet, person,type);
             }
@@ -123,6 +122,11 @@ namespace RecipeApp
                 }
             }
             if (calIn != null) {
+                if (calIn.Contains("-"))
+                {
+                    await DisplayAlert("Fail", "Cannot enter negative number", "OK");
+                    return;
+                }
                 type = "Calories";
                 person = await firebaseHelper.GetRecipe(calIn, person, type);
             }
