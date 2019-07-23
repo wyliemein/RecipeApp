@@ -122,6 +122,11 @@ namespace RecipeApp
                 }
             }
             if (calIn != null) {
+                if (calIn.Contains("-"))
+                {
+                    await DisplayAlert("Fail", "Cannot enter negative number", "OK");
+                    return;
+                }
                 type = "Calories";
                 person = await firebaseHelper.GetRecipe(calIn, person, type);
             }

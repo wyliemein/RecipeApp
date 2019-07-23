@@ -7,6 +7,8 @@ using Firebase.Database.Query;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Globalization;
+
 namespace XamarinFirebase.Helper
 {
 
@@ -101,10 +103,19 @@ namespace XamarinFirebase.Helper
             }
             if (type == "Calories")
             {
-                return initialrecipes.Where(a => a.Calories <= Convert.ToInt32(search)).ToList();
+                return initialrecipes.Where(a => Convert.ToDouble(a.Calories) <= double.Parse(search, CultureInfo.InvariantCulture)).ToList();
             }
 
             return null;
+
+        }
+
+        public async Task DeleteRecipe(string recipeName)
+        {
+            var toDeletePerson = (await firebase
+              .Child("Saved Recipes")
+              .OnceAsync<SavedRecipes>()).Where(a => a.Object.Name == recipeName).FirstOrDefault();
+            await firebase.Child("Saved Recipes").Child(toDeletePerson.Key).DeleteAsync();
 
         }
     }

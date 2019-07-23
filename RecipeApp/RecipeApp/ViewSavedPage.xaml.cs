@@ -11,6 +11,7 @@ namespace RecipeApp
 {
     public partial class ViewSavedPage : ContentPage
     {
+        FirebaseHelper firebaseHelper = new FirebaseHelper();
         public ViewSavedPage()
         {
             InitializeComponent();
@@ -27,6 +28,12 @@ namespace RecipeApp
         protected void GoGoogle(object sender, EventArgs e)
         {
             Device.OpenUri(new Uri(RecipeListPage.ViewLink));
+        }
+
+        private async void recipeDelete_OnClicked(object sender, EventArgs e)
+        {
+            await firebaseHelper.DeleteRecipe(RecipeListPage.ViewResName);
+            await Navigation.PushAsync(new RecipeListPage());
         }
     }
 }
