@@ -66,13 +66,20 @@ namespace RecipeApp
             string diet = dietLabel.Text;
             string calIn = calories.Text;
             string type = "";
-            
 
-
+            if (deIn != null)
+            {
+                bool inValidsymbol = ContainsAny(deIn, symbols);
+                if (inValidsymbol)
+                {
+                    await DisplayAlert("Fail", "Entered Invalid Symbol", "OK");
+                    return;
+                }
+            }
 
             List<Recipes> person = await firebaseHelper.GetAllRecipes("Recipes");
 
-            if (diet == null && deIn == null && calIn == null) {
+            if ((diet == null|| diet == "None") && deIn == null && calIn == null) {
                 await DisplayAlert("Fail", "Enter at least one Field", "OK");
                 return;
             }
@@ -108,14 +115,12 @@ namespace RecipeApp
             }
             if (deIn != null)
             {
-                bool inValidsymbol = ContainsAny(deIn, symbols);
-                if (inValidsymbol) {
-                    await DisplayAlert("Fail", "Entered Invalid Symbol", "OK");
-                }
-
+                string[] ingres = deIn.Split(',');
                 type = "Ingredient";
-                    person = await firebaseHelper.GetRecipe(deIn, person, type);
-                
+                foreach (var word in ingres)
+                {
+                    person = await firebaseHelper.GetRecipe(word, person, type);
+                }
             }
             if (calIn != null)
             {
