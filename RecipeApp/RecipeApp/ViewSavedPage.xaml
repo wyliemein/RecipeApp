@@ -19,6 +19,9 @@
                     Text="Recipe Ingredients: "/>
                 <Label x:Name="nutrition"
                     Text="Recipe Nutrition: "/>
+                 <Button Text="Delete" x:Name="recipeDelete"
+                        TextColor="Green" BackgroundColor="Silver"
+                        Clicked="recipeDelete_OnClicked" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

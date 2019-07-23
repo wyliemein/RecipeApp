@@ -107,5 +107,14 @@ namespace XamarinFirebase.Helper
             return null;
 
         }
+
+        public async Task DeleteRecipe(string recipeName)
+        {
+            var toDeletePerson = (await firebase
+              .Child("Saved Recipes")
+              .OnceAsync<SavedRecipes>()).Where(a => a.Object.Name == recipeName).FirstOrDefault();
+            await firebase.Child("Saved Recipes").Child(toDeletePerson.Key).DeleteAsync();
+
+        }
     }
 }
