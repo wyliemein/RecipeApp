@@ -39,6 +39,20 @@ namespace RecipeApp
         public static string Link;
         public static int index;
         public static List<Recipes> temp;
+        public static string[] symbols = new string[]{"@", "!" , "#", "$", "%", "^", "&", "*", "(", ")", "`", "~", "{", "}"
+            ,"[", "]", ";", ":", ".","/", "?","|" };
+        public static string[] vegan = new string[] { "bacon", "beef", "lamb", "pork", "snail",
+                "chicken", "turkey", "goose", "duck", "quail" ,"salmon", "tuna", "albacore", "anchovies",
+                "shrimp", "squid", "scallops", "calamari", "mussels", "crab", "lobster", "fish",
+            "milk", "yogurt", "cheese", "butter", "ice cream","cream", "eggs", "honey", "bee pollen",
+            "whey", "gelatin", "honeycomb", "lard", "fish sauce", "chicken broth","bone broth"};
+        public static string[] vegetarian = new string[] { "bacon", "beef", "lamb", "pork", "snail",
+                "chicken", "turkey", "goose", "duck", "quail" ,"salmon", "tuna", "albacore", "anchovies",
+                "shrimp", "squid", "scallops", "calamari", "mussels", "crab", "lobster", "fish" };
+        public static string[] pescatarian = new string[] { "bacon", "beef", "lamb", "pork", "snail",
+                "chicken", "turkey", "goose", "duck", "quail" };
+        public static string[] glutenfree = new string[] { "Pasta", "bread", "crackers", "semolina"
+                , "barley", "oats", "rye", "soy sauce", "chicken broth" };
 
 
         public SearchPage()
@@ -52,6 +66,8 @@ namespace RecipeApp
             string diet = dietLabel.Text;
             string calIn = calories.Text;
             string type = "";
+            
+
 
 
             List<Recipes> person = await firebaseHelper.GetAllRecipes("Recipes");
@@ -60,6 +76,31 @@ namespace RecipeApp
                 await DisplayAlert("Fail", "Enter at least one Field", "OK");
                 return;
             }
+            if(diet != "None"&&diet != null && deIn != null){
+                bool duplicated = false;
+                if (diet == "Vegan")
+                {
+                    duplicated=ContainsAny(deIn, vegan);
+                }
+                else if (diet == "Vegetarian")
+                {
+                    duplicated = ContainsAny(deIn, vegetarian);
+                }
+                else if (diet == "Pescatarian")
+                {
+                    duplicated = ContainsAny(deIn, pescatarian);
+                }
+                else if (diet == "Gluten Free")
+                {
+                    duplicated = ContainsAny(deIn, glutenfree);
+                }
+
+
+                if (duplicated) {
+                    await DisplayAlert("Fail", "Diet type and Preferred Ingredients are contradicting", "OK");
+                    return;
+                }
+            }
 
             if (diet != null&& diet != "None") {
                 type ="Category";
@@ -67,8 +108,14 @@ namespace RecipeApp
             }
             if (deIn != null)
             {
+                bool inValidsymbol = ContainsAny(deIn, symbols);
+                if (inValidsymbol) {
+                    await DisplayAlert("Fail", "Entered Invalid Symbol", "OK");
+                }
+
                 type = "Ingredient";
-                person = await firebaseHelper.GetRecipe(deIn, person,type);
+                    person = await firebaseHelper.GetRecipe(deIn, person, type);
+                
             }
             if (calIn != null)
             {
@@ -128,6 +175,17 @@ namespace RecipeApp
         private void clearFeild(Entry entry)
         {
             entry.Text = null;
+        }
+
+        private static bool ContainsAny(string oriString, string[] inValids)
+        {
+            foreach (string inValid in inValids)
+            {
+                if (oriString.Contains(inValid))
+                    return true;
+            }
+
+            return false;
         }
     }
 }
