@@ -52,7 +52,8 @@ namespace RecipeApp
 
         private async void GetSaved()
         {
-            List<Recipes> saved = await firebaseHelper.GetAllRecipes("Saved Recipes").ConfigureAwait(false);
+            string userUid = DependencyService.Get<IFirebaseAuthenticator>().CurrentUser("Uid");
+            List<Recipes> saved = await firebaseHelper.GetAllRecipes(userUid).ConfigureAwait(false);
             if (saved !=null)
             {
                 foreach (Recipes item in saved)

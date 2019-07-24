@@ -33,18 +33,25 @@ namespace RecipeApp.Droid
         }
         public void SignOut()
         {
-            string user = CurrentUser();
+            string user = CurrentUser("email");
             if (user != null)
             {
                 FirebaseAuth.Instance.SignOut();
             }
         }
-        public string CurrentUser()
+        public string CurrentUser(string type)
         {
             FirebaseUser currentUser = FirebaseAuth.Instance.CurrentUser;
             if (currentUser != null)
             {
-                return currentUser.Email;
+                if (type == "email")
+                {
+                    return currentUser.Email;
+                }
+                if (type == "Uid")
+                {
+                    return currentUser.Uid;
+                }
             }
             return null;
         }

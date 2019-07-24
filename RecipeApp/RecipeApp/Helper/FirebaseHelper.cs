@@ -52,11 +52,11 @@ namespace XamarinFirebase.Helper
         public async Task AddSavedRecipe(string RecipeUrl, string name, string RecipeIngredients, string Calcium, int Calories,
             string Cholesterol, string Fiber, string Folate, string Iron, string Magnesium, string Niacin, string Potasium, string Protien,
             string SatFats, string Sodium, string Sugars, string Thiamin, string Carbs, string Fats, string VitA, string VitB6,
-            string VitC, string Category)
+            string VitC, string Category, string Uid)
         {
 
             await firebase
-              .Child("Saved Recipes")
+              .Child(Uid)
               .PostAsync(new SavedRecipes()
               {
                   URL = RecipeUrl,
@@ -114,12 +114,12 @@ namespace XamarinFirebase.Helper
 
         }
 
-        public async Task DeleteRecipe(string recipeName)
+        public async Task DeleteRecipe(string recipeName, string type)
         {
             var toDeletePerson = (await firebase
-              .Child("Saved Recipes")
+              .Child(type)
               .OnceAsync<SavedRecipes>()).Where(a => a.Object.Name == recipeName).FirstOrDefault();
-            await firebase.Child("Saved Recipes").Child(toDeletePerson.Key).DeleteAsync();
+            await firebase.Child(type).Child(toDeletePerson.Key).DeleteAsync();
 
         }
     }

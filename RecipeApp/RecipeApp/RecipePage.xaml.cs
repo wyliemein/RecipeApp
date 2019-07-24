@@ -13,10 +13,14 @@ namespace RecipeApp
 {
     public partial class RecipePage : ContentPage
     {
+        
+        
         FirebaseHelper firebaseHelper = new FirebaseHelper();
         public RecipePage()
         {
+            
             InitializeComponent();
+            
             Uri uri = new Uri(SearchPage.Link);
             name.Text = "Recipe Name: " +SearchPage.ResName;
             url.Text = SearchPage.Link;
@@ -103,7 +107,7 @@ namespace RecipeApp
         private async Task SaveAsync()
         {
             Console.WriteLine("INDEX TO BE SAVED: " + index);
-            
+            string userUid = DependencyService.Get<IFirebaseAuthenticator>().CurrentUser("Uid");
             string tempname = SearchPage.temp[index].Name;
             string tempnURL = SearchPage.temp[index].URL;
             string tempIng = SearchPage.temp[index].Ingredient;
@@ -129,7 +133,7 @@ namespace RecipeApp
             string tempCategory = SearchPage.temp[index].Categroy;
             await firebaseHelper.AddSavedRecipe(tempnURL, tempname, tempIng, tempCalc, tempCal, tempColes,
                 tempFiber, tempFolate, tempIron, tempMag, tempNiac, tempPot, tempProtien, tempSaturatedFat,
-                tempSodium, tempSugars, tempThiamin, tempCarbs,tempFat, tempVitA, tempVitB6, tempVitC, tempCategory);
+                tempSodium, tempSugars, tempThiamin, tempCarbs,tempFat, tempVitA, tempVitB6, tempVitC, tempCategory, userUid);
         }
         private async void goHome_OnClicked(object sender, EventArgs e)
         {

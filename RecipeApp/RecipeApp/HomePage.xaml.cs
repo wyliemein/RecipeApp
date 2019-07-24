@@ -17,7 +17,7 @@ namespace RecipeApp
         public HomePage()
         {
             InitializeComponent();
-            string user = DependencyService.Get<IFirebaseAuthenticator>().CurrentUser();
+            string user = DependencyService.Get<IFirebaseAuthenticator>().CurrentUser("email");
             if (user ==  null)
             {
                 Navigation.PushAsync(new LoginPage());

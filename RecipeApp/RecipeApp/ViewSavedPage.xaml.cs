@@ -32,7 +32,8 @@ namespace RecipeApp
 
         private async void recipeDelete_OnClicked(object sender, EventArgs e)
         {
-            await firebaseHelper.DeleteRecipe(RecipeListPage.ViewResName);
+            string userUid = DependencyService.Get<IFirebaseAuthenticator>().CurrentUser("Uid");
+            await firebaseHelper.DeleteRecipe(RecipeListPage.ViewResName, userUid);
             await Navigation.PushAsync(new RecipeListPage());
         }
         private async void gotoHome_OnClicked(object sender, EventArgs e)
