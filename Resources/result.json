@@ -521,8 +521,8 @@
       "VitaminB6": "0mg",
       "Magnesium": "39mg",
       "Folate": "16mcg",
-      "Ingredient": "[' 1 pound flank steak, thinly sliced', ' 5 tablespoons soy sauce', ' 2 1/2 tablespoons white sugar', ' 1/4 cup chopped green onion', ' 2 tablespoons minced garlic', ' 2 tablespoons sesame seeds', ' 2 tablespoons sesame oil', ' 1/2 teaspoon ground black pepper']",
-      "Categroy": "['vegan', 'vegetarian', 'pescatarian']"
+      "Ingredient": "[' 1 pound flank beef steak, thinly sliced', ' 5 tablespoons soy sauce', ' 2 1/2 tablespoons white sugar', ' 1/4 cup chopped green onion', ' 2 tablespoons minced garlic', ' 2 tablespoons sesame seeds', ' 2 tablespoons sesame oil', ' 1/2 teaspoon ground black pepper']",
+      "Categroy": "['vegan', 'vegetarian']"
    },
    "Beef Stew VI": {
       "Name": "Beef Stew VI",
