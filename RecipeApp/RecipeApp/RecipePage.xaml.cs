@@ -13,10 +13,14 @@ namespace RecipeApp
 {
     public partial class RecipePage : ContentPage
     {
+        
+        
         FirebaseHelper firebaseHelper = new FirebaseHelper();
         public RecipePage()
         {
+            
             InitializeComponent();
+            
             Uri uri = new Uri(SearchPage.Link);
             name.Text = "Recipe Name: " +SearchPage.ResName;
             url.Text = SearchPage.Link;

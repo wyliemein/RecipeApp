@@ -41,15 +41,15 @@ namespace RecipeApp
         public static List<Recipes> temp;
         public static string[] symbols = new string[]{"@", "!" , "#", "$", "%", "^", "&", "*", "(", ")", "`", "~", "{", "}"
             ,"[", "]", ";", ":", ".","/", "?","|" };
-        public static string[] vegan = new string[] { "bacon", "beef", "lamb", "pork", "snail",
+        public static string[] vegan = new string[] { "steak","bacon", "beef", "lamb", "pork", "snail",
                 "chicken", "turkey", "goose", "duck", "quail" ,"salmon", "tuna", "albacore", "anchovies",
                 "shrimp", "squid", "scallops", "calamari", "mussels", "crab", "lobster", "fish",
             "milk", "yogurt", "cheese", "butter", "ice cream","cream", "eggs", "honey", "bee pollen",
             "whey", "gelatin", "honeycomb", "lard", "fish sauce", "chicken broth","bone broth"};
-        public static string[] vegetarian = new string[] { "bacon", "beef", "lamb", "pork", "snail",
+        public static string[] vegetarian = new string[] { "steak","bacon", "beef", "lamb", "pork", "snail",
                 "chicken", "turkey", "goose", "duck", "quail" ,"salmon", "tuna", "albacore", "anchovies",
                 "shrimp", "squid", "scallops", "calamari", "mussels", "crab", "lobster", "fish" };
-        public static string[] pescatarian = new string[] { "bacon", "beef", "lamb", "pork", "snail",
+        public static string[] pescatarian = new string[] { "steak","bacon", "beef", "lamb", "pork", "snail",
                 "chicken", "turkey", "goose", "duck", "quail" };
         public static string[] glutenfree = new string[] { "Pasta", "bread", "crackers", "semolina"
                 , "barley", "oats", "rye", "soy sauce", "chicken broth" };
@@ -73,7 +73,16 @@ namespace RecipeApp
                 bool inValidsymbol = ContainsAny(deIn, symbols);
                 if (inValidsymbol)
                 {
-                    await DisplayAlert("Fail", "Entered Invalid Symbol", "OK");
+                    await DisplayAlert("Fail", "Entered Invalid Symbol in Desired Ingredient", "OK");
+                    return;
+                }
+            }
+            if (unIn != null)
+            {
+                bool inValidsymbol = ContainsAny(unIn, symbols);
+                if (inValidsymbol)
+                {
+                    await DisplayAlert("Fail", "Entered Invalid Symbol in Unwished Ingredient", "OK");
                     return;
                 }
             }
@@ -84,6 +93,7 @@ namespace RecipeApp
                 await DisplayAlert("Fail", "Enter at least one Field", "OK");
                 return;
             }
+
             if(diet != "None"&&diet != null && deIn != null){
                 
                 if (Checkdup(diet,deIn)) {
@@ -99,6 +109,22 @@ namespace RecipeApp
                     await DisplayAlert("Fail", "Diet type and unwished Ingredients are contradicting", "OK");
                     return;
                 }
+            }
+
+            if (deIn != null&& unIn != null)
+            {
+                bool duplicated = false;
+                string[] ingres = deIn.Split(',');
+                foreach (var word in ingres)
+                {
+                    duplicated=unIn.ToLower().Contains(word.ToLower());
+                }
+                if (duplicated)
+                {
+                    await DisplayAlert("Fail", "Desired and Unwished Ingredients are contradicting", "OK");
+                    return;
+                }
+
             }
 
 
@@ -207,6 +233,7 @@ namespace RecipeApp
             {
                 duplicated = ContainsAny(inPut, glutenfree);
             }
+
             return duplicated;
         }
         private static bool ContainsAny(string oriString, string[] inValids)
