@@ -18,11 +18,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="SignUpPage.cs" />
-    <Compile Remove="App.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
       <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\9.3.0-23\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AppDetail.xaml.cs">
+      <DependentUpon>AppDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="AppMaster.xaml.cs">
+      <DependentUpon>AppMaster.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

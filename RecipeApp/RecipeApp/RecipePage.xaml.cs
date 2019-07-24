@@ -81,7 +81,7 @@ namespace RecipeApp
             else
             {
                 await DisplayAlert("All Out", "There are no more recipes available", "OK");
-                await Navigation.PushAsync(new SearchPage());
+                await Navigation.PushAsync(new HomePage());
             }
 
 
