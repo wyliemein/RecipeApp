@@ -17,11 +17,12 @@ namespace RecipeApp
         public HomePage()
         {
             InitializeComponent();
-            Navigation.PushAsync(new LoginPage());
+            string user = DependencyService.Get<IFirebaseAuthenticator>().CurrentUser();
+            if (user ==  null)
+            {
+                Navigation.PushAsync(new LoginPage());
+            }
         }
-
-        IFirebaseAuthenticator firebaseAuthenticator;
-
         //protected async override void OnAppearing()
         //{
 
@@ -36,7 +37,7 @@ namespace RecipeApp
         }
         private async void signOut_OnClicked(object sender, EventArgs e)
         {
-            firebaseAuthenticator.SignOut();
+            DependencyService.Get<IFirebaseAuthenticator>().SignOut();
             await Navigation.PushAsync(new LoginPage());
         }
         private async void infoButton_OnClicked(object sender, EventArgs e)

@@ -16,7 +16,7 @@ namespace RecipeApp
         {
             InitializeComponent();
             name.Text = "Recipe Name: " + RecipeListPage.ViewResName;
-            url.Text = "Recipe URl:" + RecipeListPage.ViewLink;
+            url.Text = RecipeListPage.ViewLink;
             ingredients.Text = "Recipe Ingredients: \n" + RecipeListPage.ViewIngredientList;
             nutrition.Text = "Recipe Nutrition: \n" + " \n Calcium:" + RecipeListPage.ViewCalciumList +
                " \n Calories:" + RecipeListPage.ViewCaloriesList + " \n Cholesterol:" + RecipeListPage.ViewCholesterolList + " \n DietaryFiber:" + RecipeListPage.ViewDietaryFiberList + " \n Folate:" + RecipeListPage.ViewFolateList
@@ -34,6 +34,10 @@ namespace RecipeApp
         {
             await firebaseHelper.DeleteRecipe(RecipeListPage.ViewResName);
             await Navigation.PushAsync(new RecipeListPage());
+        }
+        private async void gotoHome_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HomePage());
         }
     }
 }

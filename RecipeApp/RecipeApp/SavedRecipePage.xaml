@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RecipeApp.RecipeListPage">
     <ContentPage.Content>
         <StackLayout >
-            <Label x:Name="l" Text="Saved Recipes"/>
+            <Label x:Name="l" Text="Saved Recipes" HorizontalOptions="Center" FontSize="Large"/>
             <ListView x:Name="RecipeListView"
                 ItemsSource="{Binding Recipes}" ItemSelected="Handle_ItemSelectedAsync">
                 <ListView.ItemTemplate>

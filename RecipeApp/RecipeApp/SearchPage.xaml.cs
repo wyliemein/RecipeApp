@@ -65,6 +65,7 @@ namespace RecipeApp
             string deIn = DeIngredients.Text;
             string diet = dietLabel.Text;
             string calIn = calories.Text;
+            string unIn = UnIngredients.Text;
             string type = "";
 
             if (deIn != null)
@@ -79,35 +80,28 @@ namespace RecipeApp
 
             List<Recipes> person = await firebaseHelper.GetAllRecipes("Recipes");
 
-            if ((diet == null|| diet == "None") && deIn == null && calIn == null) {
+            if ((diet == null|| diet == "None") && deIn == null && calIn == null&& unIn==null) {
                 await DisplayAlert("Fail", "Enter at least one Field", "OK");
                 return;
             }
             if(diet != "None"&&diet != null && deIn != null){
-                bool duplicated = false;
-                if (diet == "Vegan")
-                {
-                    duplicated=ContainsAny(deIn, vegan);
-                }
-                else if (diet == "Vegetarian")
-                {
-                    duplicated = ContainsAny(deIn, vegetarian);
-                }
-                else if (diet == "Pescatarian")
-                {
-                    duplicated = ContainsAny(deIn, pescatarian);
-                }
-                else if (diet == "Gluten Free")
-                {
-                    duplicated = ContainsAny(deIn, glutenfree);
-                }
-
-
-                if (duplicated) {
-                    await DisplayAlert("Fail", "Diet type and Preferred Ingredients are contradicting", "OK");
+                
+                if (Checkdup(diet,deIn)) {
+                    await DisplayAlert("Fail", "Diet type and desired Ingredients are contradicting", "OK");
                     return;
                 }
             }
+            if (diet != "None" && diet != null && unIn != null)
+            {
+
+                if (Checkdup(diet, unIn))
+                {
+                    await DisplayAlert("Fail", "Diet type and unwished Ingredients are contradicting", "OK");
+                    return;
+                }
+            }
+
+
             if (diet != null && diet != "None") {
                 type ="Category";
                 person = await firebaseHelper.GetRecipe(diet, person,type);
@@ -116,6 +110,15 @@ namespace RecipeApp
             {
                 string[] ingres = deIn.Split(',');
                 type = "Ingredient";
+                foreach (var word in ingres)
+                {
+                    person = await firebaseHelper.GetRecipe(word, person, type);
+                }
+            }
+            if (unIn != null)
+            {
+                string[] ingres = unIn.Split(',');
+                type = "unIngredient";
                 foreach (var word in ingres)
                 {
                     person = await firebaseHelper.GetRecipe(word, person, type);
@@ -167,17 +170,17 @@ namespace RecipeApp
 
                 temp = person;
                 
-                await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
+                await DisplayAlert("Success", "Recipe Retrieved Successfully", "OK");
                 clearFeild(DeIngredients);
                 clearFeild(calories);
                 await Navigation.PushAsync(new RecipePage());
             }
             else
             {
-                await DisplayAlert("Success", "No Recipe Available", "OK");
+                await DisplayAlert("Error", "No Recipe Available", "Search Again");
                 clearFeild(DeIngredients);
                 clearFeild(calories);
-                dietLabel.Text = "";
+                dietLabel.Text = null;
             }
         }
         private void clearFeild(Entry entry)
@@ -185,11 +188,32 @@ namespace RecipeApp
             entry.Text = null;
         }
 
+        private static bool Checkdup(string diet, string inPut)
+        {
+            bool duplicated = false;
+            if (diet == "Vegan")
+            {
+                duplicated = ContainsAny(inPut, vegan);
+            }
+            else if (diet == "Vegetarian")
+            {
+                duplicated = ContainsAny(inPut, vegetarian);
+            }
+            else if (diet == "Pescatarian")
+            {
+                duplicated = ContainsAny(inPut, pescatarian);
+            }
+            else if (diet == "Gluten Free")
+            {
+                duplicated = ContainsAny(inPut, glutenfree);
+            }
+            return duplicated;
+        }
         private static bool ContainsAny(string oriString, string[] inValids)
         {
             foreach (string inValid in inValids)
             {
-                if (oriString.Contains(inValid))
+                if (oriString.ToLower().Contains(inValid))
                     return true;
             }
 

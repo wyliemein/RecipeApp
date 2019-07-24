@@ -21,6 +21,8 @@
                <!-- <Entry Placeholder="Desired Ingredients"/> -->  
                 <Entry x:Name="DeIngredients" 
                        Placeholder="Desired Ingredients seperate by comma" />
+                <Entry x:Name="UnIngredients" 
+                       Placeholder="Unwished Ingredients seperate by comma" />
                 <Entry x:Name="calories" 
                        Placeholder="Max calories want to take" 
                        Keyboard="Numeric"/>
