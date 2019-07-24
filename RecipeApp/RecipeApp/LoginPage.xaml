@@ -5,7 +5,7 @@
         <StackLayout Spacing="10" Padding="10"
                  VerticalOptions="Center">
         <!-- Place new controls here -->
-         <Label Text="Recipe App"
+         <Label Text="Pick An Ingredient"
                HorizontalOptions="Center"
                FontAttributes="Bold" 
                TextColor="Green"/>

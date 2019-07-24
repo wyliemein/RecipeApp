@@ -9,7 +9,7 @@
                 <Button x:Name="infoButton" Text="Info" HorizontalOptions="EndAndExpand" 
                         Clicked="infoButton_OnClicked"/>
             </StackLayout>
-            <Label Text="Welcome to Recipe App" HorizontalTextAlignment="Center" FontSize="Large"/>
+            <Label Text="Welcome to Pick An Ingredient" HorizontalTextAlignment="Center" FontSize="Large"/>
             <Button x:Name="goToSearch" Text="Find a Recipe"
                     TextColor="Green" BackgroundColor="Silver"
                     Clicked="goToSearch_OnClicked" />
