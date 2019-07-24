@@ -196,7 +196,7 @@ namespace RecipeApp
 
                 temp = person;
                 
-                await DisplayAlert("Success", "Recipe Retrive Successfully", "OK");
+                await DisplayAlert("Success", "Recipe Retrieved Successfully", "OK");
                 clearFeild(DeIngredients);
                 clearFeild(calories);
                 await Navigation.PushAsync(new RecipePage());
