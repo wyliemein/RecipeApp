@@ -180,7 +180,7 @@ namespace RecipeApp
                 await DisplayAlert("Error", "No Recipe Available", "Search Again");
                 clearFeild(DeIngredients);
                 clearFeild(calories);
-                dietLabel.Text = "";
+                dietLabel.Text = null;
             }
         }
         private void clearFeild(Entry entry)

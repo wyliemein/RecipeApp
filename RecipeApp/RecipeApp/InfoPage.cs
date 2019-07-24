@@ -11,11 +11,11 @@ namespace RecipeApp
             Content = new StackLayout
             {
                 Children = {
-                    new Label { Text = "Welcome to the Recipe App! To find recipes:" +
+                    new Label { Text = "Welcome to Pick an Ingredient! To find recipes:" +
                     "\n  1. Press the Find Recipe button" +
                     "\n  2. Specify your food preferences" +
                     "\n  3. Cycle through all recipes that fit your" +
-                    "\n     requirements" +
+                    "\n      requirements" +
                     "\n  4. Save Recipes for later"}
                 }
             };
