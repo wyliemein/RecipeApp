@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Firebase.Core;
-using Firebase.Auth;
+﻿using Firebase.Core;
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace RecipeApp.iOS
 {
@@ -12,7 +9,7 @@ namespace RecipeApp.iOS
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
     [Register("AppDelegate")]
-    public class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+    public class AppDelegate : Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
@@ -23,10 +20,10 @@ namespace RecipeApp.iOS
         //
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
-            global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
-
+            Forms.Init();
             App.Configure();
+            LoadApplication(application: new App());
+
             return base.FinishedLaunching(uiApplication, launchOptions);
         }
     }

@@ -21,8 +21,7 @@ namespace RecipeApp
                     if (ValidatePassword(newPassword.Text))
                     {
                         var token = await DependencyService.Get<IFirebaseAuthenticator>().SignupWithEmailPassword(newEmail.Text, newPassword.Text);
-
-                        await DisplayAlert("Signed Up", "Token: " + token, "Ok");
+                        await DisplayAlert("Success", "User: " + token + " is signed up.", "Ok");
                         await Navigation.PushAsync(new HomePage());
                     }
                     else

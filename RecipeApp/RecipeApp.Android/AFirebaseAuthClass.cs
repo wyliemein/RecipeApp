@@ -29,7 +29,7 @@ namespace RecipeApp.Droid
         {
             var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
             var token = await user.User.GetIdTokenAsync(false);
-            return token.Token;
+            return user.User.Email;
         }
         public void SignOut()
         {

@@ -18,6 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="SignUpPage.cs" />
+    <Compile Remove="App.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">

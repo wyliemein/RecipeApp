@@ -8,9 +8,16 @@ namespace RecipeApp
     {
 		public App()
         {
-            InitializeComponent();
+            switch (Device.RuntimePlatform)
+            {
 
-			MainPage = new NavigationPage(new HomePage());
+                case Device.iOS:
+                    MainPage = new NavigationPage(new RecipeApp.HomePage());
+                    break;
+                case Device.Android:
+                    MainPage = new RecipeApp.HomePage();
+                    break;
+            }
         }
 
 		protected override void OnStart()
