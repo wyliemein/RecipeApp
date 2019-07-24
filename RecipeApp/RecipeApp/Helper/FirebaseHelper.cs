@@ -97,6 +97,10 @@ namespace XamarinFirebase.Helper
             {
                 return initialrecipes.Where(a => a.Ingredient.Contains(search.ToLower()) == true).ToList();
             }
+            if (type == "unIngredient")
+            {
+                return initialrecipes.Where(a => a.Ingredient.Contains(search.ToLower()) == false).ToList();
+            }
             if (type == "Category")
             {
                 return initialrecipes.Where(a => a.Categroy.Contains(search.ToLower()) == true).ToList();
