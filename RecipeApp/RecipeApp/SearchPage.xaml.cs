@@ -74,6 +74,8 @@ namespace RecipeApp
                 if (inValidsymbol)
                 {
                     await DisplayAlert("Fail", "Entered Invalid Symbol in Desired Ingredient", "OK");
+                    clearFeild(DeIngredients);
+                    clearFeild(UnIngredients);
                     return;
                 }
             }
@@ -83,6 +85,8 @@ namespace RecipeApp
                 if (inValidsymbol)
                 {
                     await DisplayAlert("Fail", "Entered Invalid Symbol in Unwished Ingredient", "OK");
+                    clearFeild(DeIngredients);
+                    clearFeild(UnIngredients);
                     return;
                 }
             }
@@ -98,6 +102,8 @@ namespace RecipeApp
                 
                 if (Checkdup(diet,deIn)) {
                     await DisplayAlert("Fail", "Diet type and desired Ingredients are contradicting", "OK");
+                    clearFeild(DeIngredients);
+                    clearFeild(UnIngredients);
                     return;
                 }
             }
@@ -107,6 +113,8 @@ namespace RecipeApp
                 if (Checkdup(diet, unIn))
                 {
                     await DisplayAlert("Fail", "Diet type and unwished Ingredients are contradicting", "OK");
+                    clearFeild(DeIngredients);
+                    clearFeild(UnIngredients);
                     return;
                 }
             }
@@ -122,6 +130,8 @@ namespace RecipeApp
                 if (duplicated)
                 {
                     await DisplayAlert("Fail", "Desired and Unwished Ingredients are contradicting", "OK");
+                    clearFeild(DeIngredients);
+                    clearFeild(UnIngredients);
                     return;
                 }
 
@@ -154,6 +164,7 @@ namespace RecipeApp
                 if (calIn.Contains("-"))
                 {
                     await DisplayAlert("Fail", "Cannot enter negative number", "OK");
+                    clearFeild(calories);
                     return;
                 }
                 type = "Calories";
@@ -198,6 +209,7 @@ namespace RecipeApp
                 
                 await DisplayAlert("Success", "Recipe Retrieved Successfully", "OK");
                 clearFeild(DeIngredients);
+                clearFeild(UnIngredients);
                 clearFeild(calories);
                 await Navigation.PushAsync(new RecipePage());
             }
@@ -205,6 +217,7 @@ namespace RecipeApp
             {
                 await DisplayAlert("Error", "No Recipe Available", "Search Again");
                 clearFeild(DeIngredients);
+                clearFeild(UnIngredients);
                 clearFeild(calories);
                 dietLabel.Text = null;
             }
